@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>13.1软件架构概述-构件技术 | YoungDream&#39;blog</title>
+  <meta name="keywords" content=" 软考 , 系统架构设计师 ">
+  <meta name="description" content="13.1软件架构概述-构件技术 | YoungDream&#39;blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404 Not Found：该页无法显示">
+<meta property="og:url" content="https://youngdream365.github.io/404/index.html">
+<meta property="og:site_name" content="YoungDream&#39;blog">
+<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-16T08:37:03.000Z">
+<meta property="article:modified_time" content="2024-08-18T08:09:13.324Z">
+<meta property="article:author" content="YoungDream">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.ico">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/github.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.webp"/>
+</a>
+<div class="author">
+    <span>YoungDream</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/youngdream365"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/e70465b9a00f"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/qq_36299991"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:youngdream365@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=879767145&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(12)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软考">
+            <i class="fold iconfont icon-right"></i>
+            软考
+            <small>(11)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="软考&lt;---&gt;课程笔记">
+            
+            课程笔记
+            <small>(11)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="blog">
+            <i class="fold iconfont icon-right"></i>
+            blog
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="blog&lt;---&gt;hexo">
+            
+            hexo
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="12">
+<input type="hidden" id="yelog_site_word_count" value="24.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软考</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>系统架构设计师</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.6其他架构评估方法-中间件">13.6其他架构评估方法-中间件</span>
+            <span class="post-date" title="2024-09-05 22:25:06">2024/09/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.5质量属性-架构评估">13.5质量属性-架构评估</span>
+            <span class="post-date" title="2024-09-02 16:23:49">2024/09/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/30/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.4架构复用-DSSA-ABSD">13.4架构复用-DSSA-ABSD</span>
+            <span class="post-date" title="2024-08-30 23:03:28">2024/08/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/24/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-2%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.2软件架构风格">13.2软件架构风格</span>
+            <span class="post-date" title="2024-08-24 06:51:23">2024/08/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-3%E8%A1%A5%E5%85%85-%E5%B1%82%E6%AC%A1%E9%A3%8E%E6%A0%BC-SOA/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.3补充-层次风格-SOA">13.3补充-层次风格-SOA</span>
+            <span class="post-date" title="2024-08-22 20:19:58">2024/08/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-1%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0-%E6%9E%84%E4%BB%B6%E6%8A%80%E6%9C%AF/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.1软件架构概述-构件技术">13.1软件架构概述-构件技术</span>
+            <span class="post-date" title="2024-08-22 19:46:35">2024/08/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/21/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/5-1%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B-%E5%B1%80%E5%9F%9F%E7%BD%91-TCPIP%E5%8D%8F%E8%AE%AE%E6%97%8F/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="5.1七层模型-局域网-TCPIP协议族">5.1七层模型-局域网-TCPIP协议族</span>
+            <span class="post-date" title="2024-08-21 12:15:17">2024/08/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/10/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/2-1%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86-%E5%90%8C%E6%AD%A5%E4%BA%92%E6%96%A5/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="2.1操作系统概述-进程管理-同步互斥">2.1操作系统概述-进程管理-同步互斥</span>
+            <span class="post-date" title="2024-08-10 11:09:28">2024/08/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/10/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-3%E7%A3%81%E7%9B%98-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%8A%80%E6%9C%AF-%E6%80%BB%E7%BA%BF/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.3磁盘-输入输出技术-总线">1.3磁盘-输入输出技术-总线</span>
+            <span class="post-date" title="2024-08-10 08:59:45">2024/08/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6-CPU-%E6%A0%A1%E9%AA%8C%E7%A0%81/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.1计算机硬件-CPU-校验码">1.1计算机硬件-CPU-校验码</span>
+            <span class="post-date" title="2024-08-09 18:03:23">2024/08/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F-cache/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.2指令系统-存储系统-cache">1.2指令系统-存储系统-cache</span>
+            <span class="post-date" title="2024-08-09 12:21:47">2024/08/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 blog hexo "
+           href="/2023/11/21/hello-world/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2023-11-21 20:03:27">2023/11/21</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-软考/课程笔记/13-1软件架构概述-构件技术" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">13.1软件架构概述-构件技术</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="软考">软考</a>
+			 
+			>
+			 
+            
+            <a  data-rel="软考&lt;---&gt;课程笔记">课程笔记</a>
+			
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">软考</a>
+            
+            <a class="color3">系统架构设计师</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-10-30 06:14:11'>2024-08-22 19:46</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#13-1%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0-%E6%9E%84%E4%BB%B6%E6%8A%80%E6%9C%AF"><span class="toc-text">13.1软件架构概述-构件技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0"><span class="toc-text">软件架构概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%8C%85%E6%8B%AC"><span class="toc-text">软件架构设计包括</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1-SA-%E4%B8%8E%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">软件架构设计(SA)与生命周期</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%EF%B8%8F%E2%83%A3%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E9%98%B6%E6%AE%B5"><span class="toc-text">1️⃣需求分析阶段</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%EF%B8%8F%E2%83%A3%E5%9C%A8%E8%AE%BE%E8%AE%A1%E9%98%B6%E6%AE%B5"><span class="toc-text">2️⃣在设计阶段</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3%EF%B8%8F%E2%83%A3%E5%AE%9E%E7%8E%B0%E9%98%B6%E6%AE%B5"><span class="toc-text">3️⃣实现阶段</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4%EF%B8%8F%E2%83%A3%E6%9E%84%E4%BB%B6%E7%BB%84%E8%A3%85%E9%98%B6%E6%AE%B5"><span class="toc-text">4️⃣构件组装阶段</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5%EF%B8%8F%E2%83%A3%E9%83%A8%E7%BD%B2%E9%98%B6%E6%AE%B5"><span class="toc-text">5️⃣部署阶段</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6%EF%B8%8F%E2%83%A3%E5%90%8E%E5%BC%80%E5%8F%91%E9%98%B6%E6%AE%B5"><span class="toc-text">6️⃣后开发阶段</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E4%BB%B6"><span class="toc-text">构件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E4%BB%B6%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-text">构件的特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%89%B9%E6%80%A7"><span class="toc-text">对象的特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E4%BB%B6%E6%8E%A5%E5%8F%A3"><span class="toc-text">构件接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E6%9E%84%E4%BB%B6%E7%9A%84%E7%BC%96%E7%A8%8B%EF%BC%88COP%EF%BC%89"><span class="toc-text">面向构件的编程（COP）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E4%BB%B6%E6%8A%80%E6%9C%AF"><span class="toc-text">构件技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E4%BB%B6%E7%9A%84%E6%A0%87%E5%87%86"><span class="toc-text">构件的标准</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#EJB"><span class="toc-text">EJB</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#COM"><span class="toc-text">COM</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CORBA"><span class="toc-text">CORBA</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-6 i,
+    .toc-level-6 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="13-1软件架构概述-构件技术"><a href="#13-1软件架构概述-构件技术" class="headerlink" title="13.1软件架构概述-构件技术"></a>13.1软件架构概述-构件技术</h3><h4 id="软件架构概述"><a href="#软件架构概述" class="headerlink" title="软件架构概述"></a>软件架构概述</h4><ul>
+<li>从<strong>需求分析到软件设计之间的过渡过程称为软件架构</strong>。只要软件架构设计好了，整个软件就不会出现坍塌性的错误，即不会崩溃。</li>
+<li>架构设计就是<strong>需求分配，将满足需求的职责分配到组件上</strong>。</li>
+<li>软件架构为软件系统提供了一个<strong>结构、行为和属性的高级抽象</strong>，由构件的描述、构件的相互作用(连接件)、指导构件集成的模式以及这些模式的约束组饯。</li>
+<li>软件架构不仅<strong>指定了系统的组织结构和拓扑结构</strong>，并且显示了<strong>系统需求和构件之间的对应关系</strong>，提供了一些设计决策的基本原理。</li>
+<li>解决好<strong>软件的复用、质量和维护问题，是研究软件架构的根本目的</strong>。</li>
+</ul>
+<p>总结：系统架构–&gt;处于需求分析（业务）和软件设计（技术）之间的过渡，解决业务和技术之间的鸿沟，架构师要求既懂业务也懂技术。</p>
+<h4 id="软件架构设计包括"><a href="#软件架构设计包括" class="headerlink" title="软件架构设计包括"></a>软件架构设计包括</h4><ul>
+<li>软件架构设计包括<strong>提出架构模型，产生架构设计和进行设计评审</strong>等活动，是个迭代的过程。架构设计主要关注<strong>软件组件的结构、属性和交互作用，并通过多种视图全面描述特定系统的架构</strong>。</li>
+<li>软件架构能够在设计变更相对容易的阶段考虑系统结构的可选方案，便于<strong>技术人员与非技术人员就软件设计进行交互</strong>，能够<strong>展现软件的结构、属性与内部交互关系</strong>。</li>
+<li>软件架构是<strong>项目干系人进行交流的手段</strong>，明确了对系统实现的约束条件，决定了开发和维护组织的组织结构，制约着系统的质量属性。</li>
+<li>软件架构<strong>使推理和控制的更改更加简单</strong>，有助于循序渐进的原型设计，可以作为培训的基础。</li>
+<li>软件架构是<strong>可传递和可复用的模型，通过研究软件架构可能预测软件的质量</strong>。</li>
+</ul>
+<h4 id="软件架构设计-SA-与生命周期"><a href="#软件架构设计-SA-与生命周期" class="headerlink" title="软件架构设计(SA)与生命周期"></a>软件架构设计(SA)与生命周期</h4><h5 id="1️⃣需求分析阶段"><a href="#1️⃣需求分析阶段" class="headerlink" title="1️⃣需求分析阶段"></a>1️⃣需求分析阶段</h5><p>需求分析和SA设计面临的是不同的对象：一个是<code>问题空间</code>，一个是<code>解空间</code>。从软件需求模型向SA模型的转换主要关注两个问题：<strong>如何根据需求模型构建SA模型？如何保证模型转换的可追踪性？</strong></p>
+<h5 id="2️⃣在设计阶段"><a href="#2️⃣在设计阶段" class="headerlink" title="2️⃣在设计阶段"></a>2️⃣在设计阶段</h5><p>是SA<strong>研究关注的最早和最多的阶段</strong>，这一阶段的SA研究主要包括：<strong>SA模型描述、SA模型设计与方法、对SA设计经验的总结和复用</strong>等。有关SA模型的描述分三个层次：SA的基本概念（构件和连接子）、体系结构描述语言（ADL）、SA模型的多视图表示。</p>
+<h5 id="3️⃣实现阶段"><a href="#3️⃣实现阶段" class="headerlink" title="3️⃣实现阶段"></a>3️⃣实现阶段</h5><p>最初SA研究往往只关注较高层次系统设计、描述和验证。为了有效<strong>实现SA设计向实现的转换</strong>，实现阶段的体系结构研究表现在以下几个方面。</p>
+<ol>
+<li>研究基于SA的<strong>开发过程支持</strong>，如项目组织结构、配置管理等。</li>
+<li>寻求<strong>从SA向实现过度的途径</strong>，如将程序设计语言元素引入SA阶段、模型映射、构件组装、复用中间件平台等。</li>
+<li>研究<strong>基于SA的测试技术</strong>。</li>
+</ol>
+<h5 id="4️⃣构件组装阶段"><a href="#4️⃣构件组装阶段" class="headerlink" title="4️⃣构件组装阶段"></a>4️⃣构件组装阶段</h5><p>在SA设计模型的指导下，可复用构件的组装可以在<strong>较高层次上实现系统</strong>，并能够提高系统实现的效率。在构件组装的过程中，SA设计模型起到了<strong>系统蓝图的作用</strong>。研究内容包括如下两个方面。</p>
+<ol>
+<li>如何<strong>支持可复用构件的互联</strong>，即对SA 设计模型中规约的连接子的实现提供支持。</li>
+<li>在组装过程中，<strong>如何检测并消除体系结构失配问题</strong>。(2)在构件组装阶段的失配问题主要包括：由构件引起的失配、由连接子引起的失配、由于系统成分对全局体系结构的假设存在冲突引起的失配等。</li>
+</ol>
+<h5 id="5️⃣部署阶段"><a href="#5️⃣部署阶段" class="headerlink" title="5️⃣部署阶段"></a>5️⃣部署阶段</h5><p>SA 对软件部署作用如下：</p>
+<ol>
+<li>提供高层的体系结构视图来描述部署阶段的软硬件模型。</li>
+<li>基于SA 模型可以分析部署方案的质量属性，从而选择合理的部署方案。</li>
+</ol>
+<h5 id="6️⃣后开发阶段"><a href="#6️⃣后开发阶段" class="headerlink" title="6️⃣后开发阶段"></a>6️⃣后开发阶段</h5><p>是指软件部署安装之后的阶段。这一阶段的SA 研究主要围绕<strong>维护、演化、复用</strong>等方面来进行。典型的研究方向包括动态软件体系结构、体系结构恢复与重建等。</p>
+<ol>
+<li><p><strong>动态软件体系结构</strong>。现实中的软件具有动态性，体系结构会在运行时发生改变运行时变化包括两类：软件内部执行所导致的体系结构改变；软件系统外部的请求对软件进行的重配置。</p>
+<p>包括两个部分的研究：</p>
+<ul>
+<li>体系结构设计阶段的支持</li>
+<li>运行时刻基础设施的支持</li>
+</ul>
+</li>
+<li><p><strong>体系结构恢复与重建</strong>。对于现有系统在开发时候没有考虑SA的情况，从这些系统中恢复或重购体系结构。</p>
+<p>从已有的系统中获取体系结构的重建方法分为4类：</p>
+<ul>
+<li><p>手工体系结构重建</p>
+</li>
+<li><p>工具支持的手工重建</p>
+</li>
+<li><p>通过查询语言来自动建立聚集</p>
+</li>
+<li><p>使用其他技术（如数据挖掘等）</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="构件"><a href="#构件" class="headerlink" title="构件"></a>构件</h4><ul>
+<li>构件是一个<strong>独立可交付的功能单元，外界通过接口访问其提供的服务</strong>。</li>
+<li>构件由一组通常<strong>需要同时部署的原子构件组成</strong>。一个<code>原子构件</code>是<strong>一个模块和一组资源</strong>。原子构件是<strong>部署、版本控制和替换的基本单位</strong>。<code>原子构件</code>通常成组地部署，但是它也能够被单独部署。</li>
+<li>构件和原子构件之间的区别在于，<strong>大多数原子构件永远都不会被单独部署</strong>，尽管它们可以被单独部署。相反，<strong>大多数原子构件都属于一个构件家族，一次部署往往涉及整个家族</strong>。</li>
+<li><strong>一个模块是不带单独资源的原子构件</strong>。</li>
+<li>一个单独的包被编译成多个单独的类文件——每个公共类都有一个。</li>
+<li>模块是一组类和可能的非面向对象的结构体，比如过程或者函数。</li>
+</ul>
+<p>粒度不同，都可独立交付：</p>
+<ul>
+<li><p>对象（类）⬇</p>
+</li>
+<li><p>模块⬇</p>
+</li>
+<li><p>构件⬇</p>
+</li>
+<li><p>服务⬇</p>
+</li>
+</ul>
+<h4 id="构件的特性"><a href="#构件的特性" class="headerlink" title="构件的特性"></a>构件的特性</h4><ol>
+<li>独立部署单元</li>
+<li>作为第三方的组装单元</li>
+<li>没有（外部的）可见状态</li>
+</ol>
+<p>一个构件可以包含多个类元素，但是一个类元素只能属于一个构件。<br>将一个类拆分进行部署通常没什么意义。</p>
+<h4 id="对象的特性"><a href="#对象的特性" class="headerlink" title="对象的特性"></a>对象的特性</h4><ol>
+<li><p>一个实例单元，具有唯一的标志。</p>
+</li>
+<li><p>可能具有状态，此状态外部可见。</p>
+</li>
+<li><p>封装了自己的状态和行为。</p>
+</li>
+</ol>
+<h4 id="构件接口"><a href="#构件接口" class="headerlink" title="构件接口"></a>构件接口</h4><p>接口标准化是对接口中<strong>消息的格式、模式和协议的标准化</strong>。它不是要将接口格式化为参数化操作的集合，而是<strong>关注输入输出的消息的标准化</strong>，它强调当机器在网络中互连时，标准的消息模式、格式、协议的重要性。</p>
+<h4 id="面向构件的编程（COP）"><a href="#面向构件的编程（COP）" class="headerlink" title="面向构件的编程（COP）"></a>面向构件的编程（COP）</h4><p>关注于<strong>如何支持建立面向构件的解决方案</strong>，面向构件的编程需要下列基本的支持：<br>多态性（可替代性）<br>模块封装性（高层次信息的隐藏）<br>后期的绑定和装载（部署独立性）<br>安全性（类型和模块安全性）</p>
+<h4 id="构件技术"><a href="#构件技术" class="headerlink" title="构件技术"></a>构件技术</h4><p>构件技术就是利用某种编程手段，将一些人们所关心的，但又不便于让最终用户去直接操作的<strong>细节进行了封装</strong>，同时对各种业务逻辑规则进行了实现，用于处理用户的内部操作细节。</p>
+<h4 id="构件的标准"><a href="#构件的标准" class="headerlink" title="构件的标准"></a>构件的标准</h4><p>目前，国际上常用的构件标准主要有三大流派:</p>
+<h5 id="EJB"><a href="#EJB" class="headerlink" title="EJB"></a>EJB</h5><p>Enterprise Java Beans，是用于开发和部署分布式的、面向对象的Java应用系统的组件。</p>
+<p>规范由 Sun 公司制定，有三种类型的EJB，分别是：</p>
+<ul>
+<li><p>会话Bean（Session Bean）</p>
+</li>
+<li><p>实体Bean（Entity Bean）</p>
+</li>
+<li><p>消息驱动Bean（Message-driven Bean）</p>
+</li>
+</ul>
+<p>EJB实现应用中关键的业务逻辑，创建基于构件的企业级应用程序。</p>
+<h5 id="COM"><a href="#COM" class="headerlink" title="COM"></a>COM</h5><p>Component Object Model，组件对象模型。</p>
+<p>是微软公司为了计算机工业的软件生产更加符合人类的行为方式开发的一种新的软件开发技术，是关于如何建立组件以及如何通过组件建立应用程序的一个规范，说明了如何可动态交替更新组件。</p>
+<p>COM 是微软公司的。DCOM 是 COM 的进一步扩展，具有位置独立性和语言无关性。COM+ 并不是 COM 的新版本，是 COM 的新发展或是更高层次的应用。</p>
+<h5 id="CORBA"><a href="#CORBA" class="headerlink" title="CORBA"></a>CORBA</h5><p>Common Object Request Broker Architecture，通用对象请求代理体系结构。由OMG组织制订的一种标准的面向对象应用程序体系规范。</p>
+<p>CORBA 标准主要分为三个层次：<strong>对象请求代理、公共对象服务和公共设施、最底层是对象请求代理ORB</strong>。规定了分布对象的定义（接口）和语言射，实现对象间的通讯和互操作，是分布对象系统中的“软总线”；在ORB之上定义了很多公共服务，可以提供诸如并发服务、名字服务、事务（交易）服务、安全服务等各种各样的服务；最上层的公共设施则定义了组件框架提供可直接为业务对象使用的服务，规定业务对象有效协作所需的协定规则。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎大家进行交流讨论。还可通过邮箱联系：youngdream365##qq.com (##替换为@)。 </span>
+    </div>
+</article>
+
+
+<div class="article_copyright">
+    <p>
+		<span class="copy-title">文章标题:</span>13.1软件架构概述-构件技术&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">本文作者:</span><a  title="YoungDream">YoungDream</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">字数:</span><span class="post-count">2.6k</span>
+	</p>
+    <p>
+		<span class="copy-title">发布时间:</span>2024-08-22, 19:46:35&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">最后更新:</span>2024-10-30, 06:14:11
+	</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-1%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0-%E6%9E%84%E4%BB%B6%E6%8A%80%E6%9C%AF/" title="13.1软件架构概述-构件技术">https://youngdream365.github.io/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-1%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0-%E6%9E%84%E4%BB%B6%E6%8A%80%E6%9C%AF/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: 'Ov23liTt0yW7e6Mm66MW',
+            clientSecret: '52c4cd22b2658a2ac4c1c7e01b8126c3a2b84ae3',
+            repo: 'youngdream365.github.io',
+            owner: 'youngdream365',
+            admin: ['youngdream365'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2024 youngdream365
+</p>
+
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s">
+    <span class="min "></span>
+</button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞，疼爱就打赏~</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/donation/weixin.webp" class="weixin" title="扫码支持">
+            <img src="/img/donation/alipay.png" class="alipay" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" value="weixin" checked>微信</label></span>
+        <span><label><input type="radio" name="pay" value="alipay" >支付宝</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="alipay"){
+                $(".shang_box .shang_payimg .pay_img").addClass("alipay_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("alipay_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    #post {
+        background: url(/img/index.webp);
+    }
+    
+    
+    #post .index {
+        background: url(/img/index.webp);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        background: url("/img/article-list-background/sky-cloud.webp");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>1.2指令系统-存储系统-cache | YoungDream&#39;blog</title>
+  <meta name="keywords" content=" 软考 , 系统架构设计师 ">
+  <meta name="description" content="1.2指令系统-存储系统-cache | YoungDream&#39;blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404 Not Found：该页无法显示">
+<meta property="og:url" content="https://youngdream365.github.io/404/index.html">
+<meta property="og:site_name" content="YoungDream&#39;blog">
+<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-16T08:37:03.000Z">
+<meta property="article:modified_time" content="2024-08-18T08:09:13.324Z">
+<meta property="article:author" content="YoungDream">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.ico">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/github.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.webp"/>
+</a>
+<div class="author">
+    <span>YoungDream</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/youngdream365"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/e70465b9a00f"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/qq_36299991"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:youngdream365@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=879767145&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(12)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软考">
+            <i class="fold iconfont icon-right"></i>
+            软考
+            <small>(11)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="软考&lt;---&gt;课程笔记">
+            
+            课程笔记
+            <small>(11)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="blog">
+            <i class="fold iconfont icon-right"></i>
+            blog
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="blog&lt;---&gt;hexo">
+            
+            hexo
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="12">
+<input type="hidden" id="yelog_site_word_count" value="24.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软考</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>系统架构设计师</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.6其他架构评估方法-中间件">13.6其他架构评估方法-中间件</span>
+            <span class="post-date" title="2024-09-05 22:25:06">2024/09/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.5质量属性-架构评估">13.5质量属性-架构评估</span>
+            <span class="post-date" title="2024-09-02 16:23:49">2024/09/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/30/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.4架构复用-DSSA-ABSD">13.4架构复用-DSSA-ABSD</span>
+            <span class="post-date" title="2024-08-30 23:03:28">2024/08/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/24/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-2%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.2软件架构风格">13.2软件架构风格</span>
+            <span class="post-date" title="2024-08-24 06:51:23">2024/08/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-3%E8%A1%A5%E5%85%85-%E5%B1%82%E6%AC%A1%E9%A3%8E%E6%A0%BC-SOA/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.3补充-层次风格-SOA">13.3补充-层次风格-SOA</span>
+            <span class="post-date" title="2024-08-22 20:19:58">2024/08/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-1%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0-%E6%9E%84%E4%BB%B6%E6%8A%80%E6%9C%AF/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.1软件架构概述-构件技术">13.1软件架构概述-构件技术</span>
+            <span class="post-date" title="2024-08-22 19:46:35">2024/08/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/21/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/5-1%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B-%E5%B1%80%E5%9F%9F%E7%BD%91-TCPIP%E5%8D%8F%E8%AE%AE%E6%97%8F/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="5.1七层模型-局域网-TCPIP协议族">5.1七层模型-局域网-TCPIP协议族</span>
+            <span class="post-date" title="2024-08-21 12:15:17">2024/08/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/10/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/2-1%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86-%E5%90%8C%E6%AD%A5%E4%BA%92%E6%96%A5/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="2.1操作系统概述-进程管理-同步互斥">2.1操作系统概述-进程管理-同步互斥</span>
+            <span class="post-date" title="2024-08-10 11:09:28">2024/08/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/10/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-3%E7%A3%81%E7%9B%98-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%8A%80%E6%9C%AF-%E6%80%BB%E7%BA%BF/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.3磁盘-输入输出技术-总线">1.3磁盘-输入输出技术-总线</span>
+            <span class="post-date" title="2024-08-10 08:59:45">2024/08/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6-CPU-%E6%A0%A1%E9%AA%8C%E7%A0%81/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.1计算机硬件-CPU-校验码">1.1计算机硬件-CPU-校验码</span>
+            <span class="post-date" title="2024-08-09 18:03:23">2024/08/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F-cache/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.2指令系统-存储系统-cache">1.2指令系统-存储系统-cache</span>
+            <span class="post-date" title="2024-08-09 12:21:47">2024/08/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 blog hexo "
+           href="/2023/11/21/hello-world/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2023-11-21 20:03:27">2023/11/21</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-软考/课程笔记/1-2指令系统-存储系统-cache" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">1.2指令系统-存储系统-cache</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="软考">软考</a>
+			 
+			>
+			 
+            
+            <a  data-rel="软考&lt;---&gt;课程笔记">课程笔记</a>
+			
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">软考</a>
+            
+            <a class="color3">系统架构设计师</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-10-30 10:59:50'>2024-08-09 12:21</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.9k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-text">指令系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%9B%86"><span class="toc-text">指令集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Flynn%E5%88%86%E7%B1%BB%E6%B3%95"><span class="toc-text">Flynn分类法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%B5%81%E6%B0%B4%E7%BA%BF%EF%BC%88%E7%B2%BE%E7%AE%80%E6%8C%87%E4%BB%A4%E9%9B%86%E4%BD%BF%E7%94%A8%EF%BC%89"><span class="toc-text">指令流水线（精简指令集使用）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%97%B6%E9%97%B4%E8%AE%A1%E7%AE%97"><span class="toc-text">流水线时间计算</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%E2%91%A0%EF%BC%9A"><span class="toc-text">例题①：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%E2%91%A1%EF%BC%9A"><span class="toc-text">例题②：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%E2%91%A2%EF%BC%9A"><span class="toc-text">例题③：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-text">存储系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E9%80%9F%E7%BC%93%E5%AD%98Cache"><span class="toc-text">高速缓存Cache</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cache%E5%9C%B0%E5%9D%80%E6%98%A0%E5%B0%84%EF%BC%88%E7%94%B1%E7%A1%AC%E4%BB%B6%E8%87%AA%E5%8A%A8%E5%AE%8C%E6%88%90%EF%BC%89"><span class="toc-text">Cache地址映射（由硬件自动完成）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9B%BF%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-text">替换算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%B8%AD%E7%8E%87%E5%8F%8A%E5%B9%B3%E5%9D%87%E6%97%B6%E9%97%B4"><span class="toc-text">命中率及平均时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-1"><span class="toc-text">例题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%E2%91%A0"><span class="toc-text">例题①</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%E2%91%A1"><span class="toc-text">例题②</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-6 i,
+    .toc-level-6 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h3><table>
+<thead>
+<tr>
+<th>操作码</th>
+<th>地址码（操作数的地址）</th>
+</tr>
+</thead>
+</table>
+<p><strong>组成：</strong>一条指令由<strong>操作码</strong>和<strong>操作数</strong>组成。</p>
+<p><strong>执行过程：</strong>取指令——分析指令——执行指令</p>
+<p><strong>指令寻址方式：</strong></p>
+<ul>
+<li>顺序寻址</li>
+<li>跳跃寻址</li>
+</ul>
+<p><strong>指令操作数寻址方式：</strong></p>
+<ul>
+<li>立即寻址</li>
+<li>直接寻址</li>
+<li>间接寻址</li>
+<li>寄存器寻址</li>
+<li>基址寻址</li>
+<li>变址寻址</li>
+</ul>
+<h4 id="指令集"><a href="#指令集" class="headerlink" title="指令集"></a>指令集</h4><p>CISC：复杂指令系统。兼容性强，指令繁多、长度可变，由微程序实现。</p>
+<p>RISC：精简指令系统。指令少，使用频率接近，主要依靠硬件实现(通用寄存器硬布线逻辑控制)。</p>
+<p><img src="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F-cache/%E6%8C%87%E4%BB%A4%E9%9B%86%E5%88%86%E7%B1%BB.png"></p>
+<h4 id="Flynn分类法"><a href="#Flynn分类法" class="headerlink" title="Flynn分类法"></a>Flynn分类法</h4><p>Flynn分类法根据<strong>“指令流、数据流”</strong>及其多倍性，将计算机系统分为四类：</p>
+<ol>
+<li>‌单指令流单数据流（SISD）‌</li>
+<li>‌单指令流多数据流（SIMD）‌</li>
+<li>‌多指令流单数据流（MISD）‌</li>
+<li>‌多指令流多数据流（MIMD）‌现主流多核计算机俗语MIMD</li>
+</ol>
+<h4 id="指令流水线（精简指令集使用）"><a href="#指令流水线（精简指令集使用）" class="headerlink" title="指令流水线（精简指令集使用）"></a>指令流水线（精简指令集使用）</h4><p>由于指令执行过程分多个阶段，每段由不同的部分区处理，采用流水线可以节省时间：</p>
+<p>RISC：</p>
+<ol>
+<li>超流水线技术（Super Pipe Line）：时间换空间</li>
+<li>超标量技术（Super Scalar）：空间换时间</li>
+<li>超长指令字技术（Very Long Instruction World，VLIW）：发挥软件作用</li>
+</ol>
+<h4 id="流水线时间计算"><a href="#流水线时间计算" class="headerlink" title="流水线时间计算"></a>流水线时间计算</h4><ul>
+<li><p>周期：指令分成不同执行段，其中执行时间<strong>最长的段</strong>为流水线周期。</p>
+</li>
+<li><p>执行时间：*<em>1条指令总执行时间+(总指令条数-1)<em>流水线周期</em></em></p>
+</li>
+<li><p>吞吐率计算：吞吐率即单位时间内执行的指令条数。<strong>公式：指令条数&#x2F;流水线执行时间</strong>。</p>
+</li>
+<li><p>加速比计算：加速比即使用流水线后的效率提升度，即比不使用流水线快了多少倍，越高表明流水线效率越高，<strong>公式：不使用流水线执行时间&#x2F;使用流水线执行时间</strong>。</p>
+</li>
+</ul>
+<h5 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h5><h6 id="例题①："><a href="#例题①：" class="headerlink" title="例题①："></a>例题①：</h6><p>流水线的吞吐率是指流水线在单位时间里所完成的任务数或输出的结果数。设某流水线有5段，有1段的时间为2ns ，另外4段的每段时间为1ns，利用此流水线完成100个任务的吞率约为()<br>个&#x2F;s。<br>A.500x10^6	B.490x10^6	C.250x10^6	D.167x10^6</p>
+<p>答案：B</p>
+<p>解析：注意单位为秒s，1s&#x3D;10^9ns，可知流水线周期为2ns，指令条数为100，流水线执行时间为：[6+(100-1)x2]，因为吞吐率&#x3D;指令条数&#x2F;流水线执行时间，所以吞吐率为：</p>
+<p>{100&#x2F;[6+(100-1)x2]}x10^9</p>
+<p>&#x3D;(100&#x2F;204)x10^9</p>
+<p>≈0.49x10^9</p>
+<p>&#x3D;490x10^6</p>
+<h6 id="例题②："><a href="#例题②：" class="headerlink" title="例题②："></a>例题②：</h6><p>假设磁盘块与缓冲区大小相同，每个盘块读入缓冲区的时间为15us，由缓冲区送至用户区的时间是5us，在用户区内系统对每块数据的处理时间为1us，若用户需要将大小为10个磁盘块的Doc文件逐块从磁盘读入缓冲区，并送至用户区进行处理，那么采用单缓冲区需要花费的时间为()us;采用双缓冲区需要花费的时间为()us。</p>
+<p>A.150	B.151	C.156	D.201</p>
+<p>A.150	B.151	C.156	D.201</p>
+<p>答案：D、C</p>
+<p>解析：该流程分成了三个步骤，可以看作流水线来计算，前两步骤都依赖缓冲区，所以在单缓冲时看成一步合并前两步：(15+5&#x3D;20us)，运行时间&#x3D;21+(10-1)x20&#x3D;201us。双缓冲区正常计算运行时间为&#x3D;21+(10-1)x15&#x3D;156us。</p>
+<h6 id="例题③："><a href="#例题③：" class="headerlink" title="例题③："></a>例题③：</h6><p>流水线技术是通过并行硬件来提高系统性能的常用方法。对于一个k段流水线，假设其各段的执行时间均相等(设为t)，输入到流水线中的任务是连续的理想情况下，完成n个连续任务需要的总时间为()。若某流水线浮点加法运算器分为5段，所需要的时间分别是6ns、7ns、8ns、9ns和6ns，则其最大加速比为()。</p>
+<p>A.nkt	B.(k+n-1)t	C.(n-k)kt	D.(k+n+1)t</p>
+<p>答案：B</p>
+<p>解析：套公式，运行周期为9，一次运行(6+7+8+9+6)&#x3D;36ns，流水线运行时间为&#x3D;36+(n-1)x9，不用流水线运行时间：36n，加速比为：不用流水线运行时间&#x2F;流水线运行时间&#x3D;36n&#x2F;36+(n-1)x9，化简为：4n&#x2F;(n-3)，利用极限的思想，结果逼近为4。</p>
+<h4 id="存储系统"><a href="#存储系统" class="headerlink" title="存储系统"></a>存储系统</h4><ul>
+<li>CPU内部：通用寄存器</li>
+<li>Cache</li>
+<li>主存储器</li>
+<li>联机磁盘存储器</li>
+<li>脱机光盘、磁盘存储器</li>
+</ul>
+<p><strong>分级存储：</strong>解决存储容量、成本、速度之间的矛盾</p>
+<p><strong>两级存储：</strong>Cache-主存、主存-辅存（虚拟存储体系）。</p>
+<p><strong>局部性原理：</strong>总的来说，在CPU运行时，所访问的数据会趋向于一个较小的局部空间地址内，包括下面两个方面:</p>
+<ul>
+<li><strong>时间局部性原理：</strong>如果一个数据项正在被访问，那么在近期它很可能会被再次访问，即<strong>在相邻的时间里会访问同一个数据项</strong>。</li>
+<li><strong>空间局部性原理：</strong>在最近的将来会用到的数据的地址和现在正在访问的数据地址很可能是相近的，即<strong>相邻的空间地址会被连续访问</strong>。</li>
+</ul>
+<h4 id="高速缓存Cache"><a href="#高速缓存Cache" class="headerlink" title="高速缓存Cache"></a>高速缓存Cache</h4><p>Cache用于储存最活跃的程序和数据，直接和CPU交互，位于CPU和主存之间。</p>
+<p>Cache由控制部分和存储器组成。存储器存储数据，控制部分判断CPU访问数据是否在Cache中，在则命中，不在则依据一定算法从主存中替换。</p>
+<h4 id="Cache地址映射（由硬件自动完成）"><a href="#Cache地址映射（由硬件自动完成）" class="headerlink" title="Cache地址映射（由硬件自动完成）"></a>Cache地址映射（由硬件自动完成）</h4><p>在CPU工作时，送出的是主存单元的地址，而应从Cache存储器中读&#x2F;写信息。这就需要将主存地址转换为Cache存储器地址，这种地址的转换称为地址映像，<strong>由硬件自动完成映射</strong>，分三种方法:</p>
+<ul>
+<li><p>直接映射</p>
+</li>
+<li><p>全相联映射（不浪费，不易冲突）</p>
+</li>
+<li><p>组组相联映射（前两个的优化结合，先分块再分组）</p>
+</li>
+</ul>
+<h4 id="替换算法"><a href="#替换算法" class="headerlink" title="替换算法"></a>替换算法</h4><p>提高Cache获得尽可能高的命中率</p>
+<ol>
+<li>随机替换</li>
+<li>先进先出</li>
+<li>近期最少使用</li>
+<li>优化替换算法（先计算统计分析）</li>
+</ol>
+<h4 id="命中率及平均时间"><a href="#命中率及平均时间" class="headerlink" title="命中率及平均时间"></a>命中率及平均时间</h4><p><strong>尽量让CPU直接访问Cache，而不是主存。</strong></p>
+<p><img src="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F-cache/Cache%E5%91%BD%E4%B8%AD%E7%8E%87.png" alt="Cache命中率"></p>
+<p>Cache有一个命中率的概念，即当CPU所访问的数据在cache中时，命中，直接从Cache中读取数据，设读取一次Cache时间为1ns，若CPU访问的数据不在cache中则需要从内存中读取，设读取一次内存的时间为1000ns，若在CPU多次读取数据过程中，有90%命中Cache，则CPU读取一次的平均时间为(90%x1+10%x1000)ns。</p>
+<h4 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h4><h6 id="例题①"><a href="#例题①" class="headerlink" title="例题①"></a>例题①</h6><p>按照cache地址映像的块冲突概率，从高到低排列的是()。</p>
+<p>A.全相联映像→直接映像→组相联映像</p>
+<p><strong>B.直接映像→组相联映像→全相联映像</strong></p>
+<p>C.组相联映像→全相联映像→直接映像</p>
+<p>D.直接映像→全相联映像→组相联映像</p>
+<p>答案：B</p>
+<h6 id="例题②"><a href="#例题②" class="headerlink" title="例题②"></a>例题②</h6><p>以下关于Cache与主存间地址映射的叙述中，正确的是()。</p>
+<p>A.操作系统负责管理Cache与主存之间的地址映射</p>
+<p>B.程序员需要通过编程来处理cache与主存之间的地址映射</p>
+<p>C应用软件对cache与主存之间的地址映射进行调度</p>
+<p><strong>D:由硬件自动完成Cache与主存之间的地址映射</strong></p>
+<p>答案：D</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎大家进行交流讨论。还可通过邮箱联系：youngdream365##qq.com (##替换为@)。 </span>
+    </div>
+</article>
+
+
+<div class="article_copyright">
+    <p>
+		<span class="copy-title">文章标题:</span>1.2指令系统-存储系统-cache&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">本文作者:</span><a  title="YoungDream">YoungDream</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">字数:</span><span class="post-count">1.9k</span>
+	</p>
+    <p>
+		<span class="copy-title">发布时间:</span>2024-08-09, 12:21:47&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">最后更新:</span>2024-10-30, 10:59:50
+	</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F-cache/" title="1.2指令系统-存储系统-cache">https://youngdream365.github.io/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F-cache/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: 'Ov23liTt0yW7e6Mm66MW',
+            clientSecret: '52c4cd22b2658a2ac4c1c7e01b8126c3a2b84ae3',
+            repo: 'youngdream365.github.io',
+            owner: 'youngdream365',
+            admin: ['youngdream365'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2024 youngdream365
+</p>
+
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s">
+    <span class="min "></span>
+</button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞，疼爱就打赏~</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/donation/weixin.webp" class="weixin" title="扫码支持">
+            <img src="/img/donation/alipay.png" class="alipay" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" value="weixin" checked>微信</label></span>
+        <span><label><input type="radio" name="pay" value="alipay" >支付宝</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="alipay"){
+                $(".shang_box .shang_payimg .pay_img").addClass("alipay_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("alipay_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    #post {
+        background: url(/img/index.webp);
+    }
+    
+    
+    #post .index {
+        background: url(/img/index.webp);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        background: url("/img/article-list-background/sky-cloud.webp");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

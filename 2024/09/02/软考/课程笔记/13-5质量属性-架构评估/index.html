@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>13.5质量属性-架构评估 | YoungDream&#39;blog</title>
+  <meta name="keywords" content=" 软考 , 系统架构设计师 ">
+  <meta name="description" content="13.5质量属性-架构评估 | YoungDream&#39;blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404 Not Found：该页无法显示">
+<meta property="og:url" content="https://youngdream365.github.io/404/index.html">
+<meta property="og:site_name" content="YoungDream&#39;blog">
+<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-16T08:37:03.000Z">
+<meta property="article:modified_time" content="2024-08-18T08:09:13.324Z">
+<meta property="article:author" content="YoungDream">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.ico">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/github.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.webp"/>
+</a>
+<div class="author">
+    <span>YoungDream</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/youngdream365"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/e70465b9a00f"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/qq_36299991"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:youngdream365@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=879767145&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(12)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软考">
+            <i class="fold iconfont icon-right"></i>
+            软考
+            <small>(11)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="软考&lt;---&gt;课程笔记">
+            
+            课程笔记
+            <small>(11)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="blog">
+            <i class="fold iconfont icon-right"></i>
+            blog
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="blog&lt;---&gt;hexo">
+            
+            hexo
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="12">
+<input type="hidden" id="yelog_site_word_count" value="24.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软考</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>系统架构设计师</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.6其他架构评估方法-中间件">13.6其他架构评估方法-中间件</span>
+            <span class="post-date" title="2024-09-05 22:25:06">2024/09/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.5质量属性-架构评估">13.5质量属性-架构评估</span>
+            <span class="post-date" title="2024-09-02 16:23:49">2024/09/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/30/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.4架构复用-DSSA-ABSD">13.4架构复用-DSSA-ABSD</span>
+            <span class="post-date" title="2024-08-30 23:03:28">2024/08/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/24/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-2%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.2软件架构风格">13.2软件架构风格</span>
+            <span class="post-date" title="2024-08-24 06:51:23">2024/08/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-3%E8%A1%A5%E5%85%85-%E5%B1%82%E6%AC%A1%E9%A3%8E%E6%A0%BC-SOA/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.3补充-层次风格-SOA">13.3补充-层次风格-SOA</span>
+            <span class="post-date" title="2024-08-22 20:19:58">2024/08/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-1%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0-%E6%9E%84%E4%BB%B6%E6%8A%80%E6%9C%AF/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.1软件架构概述-构件技术">13.1软件架构概述-构件技术</span>
+            <span class="post-date" title="2024-08-22 19:46:35">2024/08/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/21/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/5-1%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B-%E5%B1%80%E5%9F%9F%E7%BD%91-TCPIP%E5%8D%8F%E8%AE%AE%E6%97%8F/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="5.1七层模型-局域网-TCPIP协议族">5.1七层模型-局域网-TCPIP协议族</span>
+            <span class="post-date" title="2024-08-21 12:15:17">2024/08/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/10/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/2-1%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86-%E5%90%8C%E6%AD%A5%E4%BA%92%E6%96%A5/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="2.1操作系统概述-进程管理-同步互斥">2.1操作系统概述-进程管理-同步互斥</span>
+            <span class="post-date" title="2024-08-10 11:09:28">2024/08/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/10/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-3%E7%A3%81%E7%9B%98-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%8A%80%E6%9C%AF-%E6%80%BB%E7%BA%BF/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.3磁盘-输入输出技术-总线">1.3磁盘-输入输出技术-总线</span>
+            <span class="post-date" title="2024-08-10 08:59:45">2024/08/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6-CPU-%E6%A0%A1%E9%AA%8C%E7%A0%81/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.1计算机硬件-CPU-校验码">1.1计算机硬件-CPU-校验码</span>
+            <span class="post-date" title="2024-08-09 18:03:23">2024/08/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F-cache/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.2指令系统-存储系统-cache">1.2指令系统-存储系统-cache</span>
+            <span class="post-date" title="2024-08-09 12:21:47">2024/08/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 blog hexo "
+           href="/2023/11/21/hello-world/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2023-11-21 20:03:27">2023/11/21</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-软考/课程笔记/13-5质量属性-架构评估" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">13.5质量属性-架构评估</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="软考">软考</a>
+			 
+			>
+			 
+            
+            <a  data-rel="软考&lt;---&gt;课程笔记">课程笔记</a>
+			
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">软考</a>
+            
+            <a class="color3">系统架构设计师</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-10-30 06:15:57'>2024-09-02 16:23</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:4.8k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0"><span class="toc-text">13.5质量属性-架构评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7"><span class="toc-text">软件系统的质量属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0"><span class="toc-text">软件架构评估</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7"><span class="toc-text">质量属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%80%A7%E8%83%BD"><span class="toc-text">1. 性能</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%8F%AF%E9%9D%A0%E6%80%A7"><span class="toc-text">2. 可靠性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="toc-text">3. 可用性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-text">4. 安全性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E5%8F%AF%E4%BF%AE%E6%94%B9%E6%80%A7"><span class="toc-text">5. 可修改性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E5%8A%9F%E8%83%BD%E6%80%A7"><span class="toc-text">6. 功能性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-%E5%8F%AF%E5%8F%98%E6%80%A7"><span class="toc-text">7. 可变性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-%E4%BA%92%E6%93%8D%E4%BD%9C%E6%80%A7"><span class="toc-text">8. 互操作性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7%E5%9C%BA%E6%99%AF"><span class="toc-text">质量属性场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E5%B8%B8%E7%94%A8%E7%9A%84%E8%AF%84%E4%BC%B0%E6%96%B9%E5%BC%8F"><span class="toc-text">三种常用的评估方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%B0%83%E6%9F%A5%E9%97%AE%E5%8D%B7%EF%BC%88%E6%A3%80%E6%9F%A5%E8%A1%A8%EF%BC%89%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">基于调查问卷（检查表）的方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%BA%A6%E9%87%8F%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">基于度量的方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%9C%BA%E6%99%AF%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-text">基于场景的方式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SAAM%EF%BC%9A%E5%9F%BA%E4%BA%8E%E5%9C%BA%E6%99%AF%E7%9A%84%E6%9E%B6%E6%9E%84%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95"><span class="toc-text">SAAM：基于场景的架构分析方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ATTM%EF%BC%9A%E6%9E%B6%E6%9E%84%E6%9D%83%E8%A1%A1%E5%88%86%E6%9E%90%E6%B3%95"><span class="toc-text">ATTM：架构权衡分析法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#ATAM%E6%96%B9%E6%B3%95%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E5%AE%9E%E8%B7%B5"><span class="toc-text">ATAM方法架构评估实践</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CBAM%EF%BC%9A%E6%88%90%E6%9C%AC%E6%95%88%E7%9B%8A%E5%88%86%E6%9E%90%E6%B3%95"><span class="toc-text">CBAM：成本效益分析法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95%E4%BA%86%E8%A7%A3"><span class="toc-text">其他评估方法了解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-SAEM%E6%96%B9%E6%B3%95"><span class="toc-text">1. SAEM方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-SAABNet%E6%96%B9%E6%B3%95"><span class="toc-text">2. SAABNet方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-SACMM%E6%96%B9%E6%B3%95"><span class="toc-text">3. SACMM方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-SASAM%E6%96%B9%E6%B3%95"><span class="toc-text">4. SASAM方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-ALRRA%E6%96%B9%E6%B3%95"><span class="toc-text">5. ALRRA方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-AHP%EF%BC%88%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95%EF%BC%89%E6%96%B9%E6%B3%95%E3%80%82"><span class="toc-text">6. AHP（层次分析法）方法。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-COSMIC-UML%E6%96%B9%E6%B3%95%E3%80%82"><span class="toc-text">7. COSMIC+UML方法。</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%98%E2%91%A0"><span class="toc-text">题①</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%98%E2%91%A1"><span class="toc-text">题②</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-6 i,
+    .toc-level-6 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="13-5质量属性-架构评估"><a href="#13-5质量属性-架构评估" class="headerlink" title="13.5质量属性-架构评估"></a>13.5质量属性-架构评估</h3><h4 id="软件系统的质量属性"><a href="#软件系统的质量属性" class="headerlink" title="软件系统的质量属性"></a>软件系统的质量属性</h4><p>可以将软件系统的质量属性，分为<strong>开发期质量属性和运行期质量</strong>属性2个部分。</p>
+<ol>
+<li><p>开发期质量属性主要指在<strong>软件开发阶段</strong>所关注的质量属性，主要包含6个方面</p>
+<p>(1)<strong>易理解性</strong>：指设计被开发人员理解的难易程度。</p>
+<p>(2)<strong>可扩展性</strong>：软件因适应新需求或需求变化而增加新功能的能力，也称为灵活性可</p>
+<p>(3)<strong>重用性</strong>：指重用软件系统或某一部分的难易程度。</p>
+<p>(4)<strong>可测试性</strong>：对软件测试以证明其满足需求规范的难易程度。</p>
+<p>(5)<strong>可维护性</strong>：当需要修改缺陷、增加功能、提高质量属性时，识别修改点并实施修改的难易程度。</p>
+<p>(6)<strong>可移植性</strong>:将软件系统从一个运行环境转移到另一个不同的运行环境的难易程度。</p>
+</li>
+<li><p>运行期质量属性主要指在<strong>软件运行阶段</strong>所关注的质量属性，主要包含7个方面。</p>
+<p>(1)<strong>性能</strong>：性能是指软件系统及时提供相应服务的能力，如速度、吞吐量和容量等的要求</p>
+<p>(2)<strong>安全性</strong>：指软件系统同时兼顾向合法用户提供服务，以及阻止非授权使用的能力。</p>
+<p>(3)<strong>可伸缩性</strong>：指当用户数和数据量增加时，软件系统维持高服务质量的能力。例如，通过增加服务器来提高能力。</p>
+<p>(4)<strong>互操作性</strong>：指本软件系统与其他系统交换数据和相互调用服务的难易程度。</p>
+<p>(5)<strong>可靠性</strong>：软件系统在一定的时间内持续无故障运行的能力。</p>
+<p>(6)<strong>可用性</strong>：指系统在一定时间内正常工作的时间所占的比例。可用性会受到系统错误，恶意攻击高负载等问题的影响。<br>(7)<strong>鲁棒性</strong>：是指软件系统在非正常情况(如用户进行了非法操作、相关的软硬件系统发生了故障等)下仍能够正常运行的能力，也称健壮性或容错性。</p>
+</li>
+</ol>
+<h4 id="软件架构评估"><a href="#软件架构评估" class="headerlink" title="软件架构评估"></a>软件架构评估</h4><h5 id="质量属性"><a href="#质量属性" class="headerlink" title="质量属性"></a>质量属性</h5><p>掌握：定义、包含子特性、如何解决&#x2F;达到质量属性</p>
+<h5 id="1-性能"><a href="#1-性能" class="headerlink" title="1. 性能"></a>1. 性能</h5><p>指系统的响应能力，即要经过多长时间才能对某个事件做出响应，或者在某段时间内系统所能处理的事件的个数。如响应时间、吞吐量。设计策略:优先级队列、增加计算资源、减少计算开销、引入并发机制、采用资源调度等。</p>
+<h5 id="2-可靠性"><a href="#2-可靠性" class="headerlink" title="2. 可靠性"></a>2. 可靠性</h5><p>是软件系统在应用或系统错误面前，在意外或错误使用的情况下维持软件系统的功能特性的基本能力。如MTTF、MTBF、MTTR。设计策略:心跳、Ping&#x2F;Echo、冗余、选举</p>
+<h5 id="3-可用性"><a href="#3-可用性" class="headerlink" title="3. 可用性"></a>3. 可用性</h5><p>是系统能够正常运行的时间比例，经常用两次故障之间的时间长度或在出现故障时系统能够恢复正常的速度来表示。如故障间隔时间。设计策略:心跳、Ping&#x2F;Echo、几余、选举</p>
+<h5 id="4-安全性"><a href="#4-安全性" class="headerlink" title="4. 安全性"></a>4. 安全性</h5><p>是指系统在向合法用户提供服务的同时能够阻止非授权用户使用的企图或拒绝服务的能力。如保密性、完整性、不可抵赖性、可控性。设计策略:入侵检测、用户认证、用户授权、追踪审计。</p>
+<h5 id="5-可修改性"><a href="#5-可修改性" class="headerlink" title="5. 可修改性"></a>5. 可修改性</h5><p>指能够快速的以较高的性能价格比对系统进行变更的能力。通常以某些具体的变更为基准，通过考察这些变更的代价衡量。设计策略:接口-实现分类、抽象、信息隐藏。</p>
+<h5 id="6-功能性"><a href="#6-功能性" class="headerlink" title="6. 功能性"></a>6. 功能性</h5><p>是系统所能完成所期望的工作的能力。一项任务的完成需要系统中许多或大多数构件的相互协作。</p>
+<h5 id="7-可变性"><a href="#7-可变性" class="headerlink" title="7. 可变性"></a>7. 可变性</h5><p>指体系结构经扩充或变更而成为新体系结构的能力。这种新体系结构应该符合预先定义的规则，在某些具体方面不同于原有的体系结构。当要将某个体系结构作为一系列相关产品的基础时，可变性是很重要的。</p>
+<h5 id="8-互操作性"><a href="#8-互操作性" class="headerlink" title="8. 互操作性"></a>8. 互操作性</h5><p>作为系统组成部分的软件不是独立存在的，经常与其他系统或自身环境相互作用。为了支持互操作性，软件体系结构必须为外部可视的功能特性和数据结构提供精心设计的软件入口。程序和用其他编程语言编写的软件系统的交互作用就是互操作性的问题，也影响应用的软件体系结构。</p>
+<h4 id="质量属性场景"><a href="#质量属性场景" class="headerlink" title="质量属性场景"></a>质量属性场景</h4><p>质量属性场景是一种面向特定质量属性的需求。它由6 部分组成：</p>
+<ol>
+<li><p><strong>刺激源（Source）</strong>：这是某个生成该刺激的实体(人、计算机系统或者任何其他刺激器)</p>
+</li>
+<li><p><strong>刺激（Stimulus）</strong>：该刺激是当刺激到达系统时需要考虑的条件。</p>
+</li>
+<li><p><strong>环境（Environment）</strong>：该刺激在某些条件内发生。当激励发生时，系统可能处于过载、运行或者其他情况。</p>
+</li>
+<li><p><strong>制品（Artifact）</strong>：某个制品被激励。这可能是整个系统，也可能是系统的一部分。</p>
+</li>
+<li><p><strong>响应（Response）</strong>：该响应是在激励到达后所采取的行动。</p>
+</li>
+<li><p><strong>响应度量（Measurement）</strong>：当响应发生时，应当能够以某种方式对其进行度量，以对需求进行测试、</p>
+</li>
+</ol>
+<p>可修改性质量属性场景描述实例：</p>
+<p><img src="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7%E5%9C%BA%E6%99%AF.png" alt="质量属性场景"></p>
+<ul>
+<li>敏感点：是指为了实现某种特定的质量属性，一个或多个构件所具有的特性。</li>
+<li>权衡点：是影响多个质量属性的特性，是多个质量属性的敏感点。</li>
+<li>风险点与非风险点：不是以标准专业术语形式出现的，只是一个常规概念，即<strong>可能引起风险的因素，可称为风险点</strong>。某个做法如果有隐患，有可能导致一些问题，则为风险点；而如果<strong>某件事是可行的可接受的，则为非风险点</strong>。</li>
+<li>软件架构评估在<strong>架构设计之后，系统设计之前</strong>，因此与设计、实现、测试都没有关系。评估的目的是为了评估所采用的架构是否能解决软件系统需求，但不是单纯的确定是否满足需求。</li>
+</ul>
+<h4 id="三种常用的评估方式"><a href="#三种常用的评估方式" class="headerlink" title="三种常用的评估方式"></a>三种常用的评估方式</h4><h5 id="基于调查问卷（检查表）的方式"><a href="#基于调查问卷（检查表）的方式" class="headerlink" title="基于调查问卷（检查表）的方式"></a>基于调查问卷（检查表）的方式</h5><p>类似于需求获取中的问卷调查方式，只不过是架构方面的问卷，要求评估人员对领域熟悉。</p>
+<h5 id="基于度量的方式"><a href="#基于度量的方式" class="headerlink" title="基于度量的方式"></a>基于度量的方式</h5><p>制定一些定量指标来度量架构，如代码行数等。要制定质量属性和度量结果之间的映射，要求评估人员对架构熟悉。</p>
+<h5 id="基于场景的方式"><a href="#基于场景的方式" class="headerlink" title="基于场景的方式"></a>基于场景的方式</h5><p>主要方法。首先要确定应用领域的功能和软件架构的结构之间的映射，然后要设计用于体现待评估质量属性的场景（即4+1视图中的场景），最后分析软件架构对场景的支持程度。要求评估人员即对领域熟悉，也对架构熟悉。</p>
+<p>从三个方面对场景进行设计：</p>
+<ul>
+<li><p>刺激（事件）</p>
+</li>
+<li><p>环境（事件发生的环境）</p>
+</li>
+<li><p>响应（架构响应刺激的过程）</p>
+</li>
+</ul>
+<p><img src="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E2%80%94%E2%80%94%E8%AF%84%E4%BC%B0%E6%96%B9%E5%BC%8F.png" alt="软件架构评估——评估方式"></p>
+<h4 id="SAAM：基于场景的架构分析方法"><a href="#SAAM：基于场景的架构分析方法" class="headerlink" title="SAAM：基于场景的架构分析方法"></a>SAAM：基于场景的架构分析方法</h4><p>SAAM是一种非功能质量属性的架构分析方法，是最早形成文档并得到广泛应用的软件架构分析方法</p>
+<p><strong>特定目标</strong>：SAAM的目标是对描述应用程序属性的文档，验证基本的架构假设和原则。</p>
+<p><strong>质量属性</strong>：这一方法的基本特点是把任何形式的质量属性都具体化为场景，但可修改性是SAAM分析的主要质量属性。</p>
+<p><strong>架构描述</strong>。SAAM 用于架构的最后版本，但早于详细设计。架构的描述形式应当被所有参与者理解。</p>
+<p><strong>功能、结构和分配</strong>：被定义为描述架构的3个主要方面。</p>
+<p><strong>方法活动</strong>：SAAM的主要输入是问题描述、需求声明和架构描述。下图描绘了SAAM分析活动的相关输入及评估过程。</p>
+<p>包括5个步骤：</p>
+<ol>
+<li>场景开发</li>
+<li>架构描述</li>
+<li>单个场景评估</li>
+<li>场景交互</li>
+<li>总体评估</li>
+</ol>
+<p><img src="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/SAAM.png" alt="SAAM"></p>
+<h4 id="ATTM：架构权衡分析法"><a href="#ATTM：架构权衡分析法" class="headerlink" title="ATTM：架构权衡分析法"></a>ATTM：架构权衡分析法</h4><p>让架构师明确如何权衡多个质量目标，参与者有评估小组、项目决策者和其他项目相关人。</p>
+<p><img src="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/ATAM%E5%9B%9B%E9%98%B6%E6%AE%B5.png" alt="ATAM四阶段"></p>
+<p>ATAM被分为四个主要的活动领域：分别是</p>
+<ol>
+<li>场景和需求收集</li>
+<li>体系结构视图和场景实现</li>
+<li>属性模型构造</li>
+<li>分析折中</li>
+</ol>
+<p>整个评估过程强调<strong>以属性作为架构评估的核心概念</strong>。主要针对性能可用性、安全性和可修改性，在系统开发之前，对这些质量属性进行评价和折中。</p>
+<h5 id="ATAM方法架构评估实践"><a href="#ATAM方法架构评估实践" class="headerlink" title="ATAM方法架构评估实践"></a>ATAM方法架构评估实践</h5><p><img src="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/ATAM%E8%AF%84%E4%BC%B0%E5%AE%9E%E8%B7%B5.png" alt="ATAM评估实践"></p>
+<p><img src="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/ATAM.png" alt="ATAM"></p>
+<h4 id="CBAM：成本效益分析法"><a href="#CBAM：成本效益分析法" class="headerlink" title="CBAM：成本效益分析法"></a>CBAM：成本效益分析法</h4><p>用来<strong>对架构建立的成本来进行设计和建模</strong>，让决策者<strong>根据投资收益率来选择合适的架构</strong>，可以看做对ATAM的补充，在ATAM确定质量合理的基础上，再对效益进行分析。有下列步骤：</p>
+<ul>
+<li><p><strong>整理场景：</strong></p>
+<p>整理ATAM中获取的场景，并根据商业目标确定场景的优先级，选取优先级最高的1&#x2F;3场景进行分析。（确定场景，并确定优先级，选择三分之一优先级最高的场景进行分析）。</p>
+</li>
+<li><p><strong>对场景进行细化：</strong></p>
+<p>为每个场景获取最坏情况、当前情况、期望情况和最好情况下的质量属性响应级别。（对每个场景详细分析，确定最好、最坏的情况）。</p>
+</li>
+<li><p><strong>确定场景的优先级：</strong></p>
+<p>项目干系人对场景进行投票，根据每个场景的“所期望的”响应值进行投票，生成一个分值（场景的权值）（项目干系人对场景投票，根据投票结果确定优先级）。</p>
+</li>
+<li><p><strong>分配效用：</strong></p>
+<p>确定场景响应级别（最坏情况、当前情况、期望情况和最好情况）的效用表。（对场景响应级别确定效用表，建立策略、场景、响应级别的表格）。</p>
+</li>
+<li><p><strong>形成“策略-场景-响应级别的对应关系”：</strong></p>
+<p>确定架构策略涉及的质量属性及响应级别，并形成“策略一场景一响应级别”的对应关系。</p>
+</li>
+<li><p><strong>确定期望的质量属性响应级别的效用：</strong></p>
+<p>使用内插法确定“期望的”质量属性响应级别的效用。根据效用表和对应关系，确定架构策略及其对应场景的效用表。（根据效用表确定所对应的具体场景的效用表）。</p>
+</li>
+<li><p><strong>计算各架构策略的总收益：</strong></p>
+<p>根据场景的权值和架构策略的效用表，计算出各架构策略的总收益得分。根据成本限制下的ROI选择架构策略。根据开发经验估算架构策略的成本，结合收益计算出架构策略的ROI，按照ROI排序来确定优先级。根据受成本限制影响的投资报酬率选择架构策略（估算成本，用上一步的收益减去成本，得出收益，并选择收益最高的架构策略）。</p>
+</li>
+</ul>
+<h4 id="其他评估方法了解"><a href="#其他评估方法了解" class="headerlink" title="其他评估方法了解"></a>其他评估方法了解</h4><h5 id="1-SAEM方法"><a href="#1-SAEM方法" class="headerlink" title="1. SAEM方法"></a>1. SAEM方法</h5><p>将软件架构看作<strong>一个最终产品以及设计过程中的一个中间产品</strong>，从<strong>外部质量属性</strong>和<strong>内部质量属性</strong>两个角度来阐述它的评估模型，旨在为软件架构的质量评估创建一个基础框架。</p>
+<p>外部属性指<strong>用户定义的质量属性</strong>，而内部属性指<strong>开发者决定的质量属性</strong>。该软件架构评估模型包含以下几个流程：</p>
+<ol>
+<li><p>对待评估的质量属性进行<strong>规约建模</strong>。</p>
+</li>
+<li><p>为外部和内部的质量属性<strong>创建度量准则</strong>，先从评估目的(如软件架构比较、最终产品的质量预测)，评估角度（如开发者、用户、维护者），评估环境（架构作为最终产品或设计中间产品）出发来定义架构评估的目标，再根据目标相关的属性来提出问题，然后回答每个问题并提出相应的度量准则。</p>
+</li>
+<li><p>评估质量属性，包括<code>数据收集</code>、<code>度量</code>和<code>结果分析</code>3个活动。</p>
+</li>
+</ol>
+<h5 id="2-SAABNet方法"><a href="#2-SAABNet方法" class="headerlink" title="2. SAABNet方法"></a>2. SAABNet方法</h5><p>是一种<strong>用来表达和使用定性知识</strong>以辅助架构的<strong>定性评估</strong>。该方法来源于<strong>人工智能</strong>允许不确定、不完整知识的推理。该方法使用 BBN 来表示和使用开发过程中的知识，包含定性和定量的描述，其中定性的描述是所有结点的图，定量的描述是每个结点状态相关的条件概率。其中的变量可分为 3 类，即架构质量属性变量（如可维护性、灵活性等）、质量属性的度量准则变量（如容错性、响应性等）和架构特征变量（如继承深度、编程语言等），高层抽象的质量属性变量分解为低层抽象的度量准则变量，度量准则变量则分解为更低层抽象的架构特征变量。</p>
+<h5 id="3-SACMM方法"><a href="#3-SACMM方法" class="headerlink" title="3. SACMM方法"></a>3. SACMM方法</h5><p>是一种<strong>软件架构修改</strong>的度量方法。</p>
+<h5 id="4-SASAM方法"><a href="#4-SASAM方法" class="headerlink" title="4. SASAM方法"></a>4. SASAM方法</h5><p>通过对<strong>预期架构</strong>（架构设计阶段的相关描述材料）和<strong>实际架构</strong>（源代码中执行的架构）<strong>进行映射和比较来静态地评估软件架构</strong>。</p>
+<h5 id="5-ALRRA方法"><a href="#5-ALRRA方法" class="headerlink" title="5. ALRRA方法"></a>5. ALRRA方法</h5><p>是一种软件架构可靠性风险评估方法，该方法使用动态复杂度准则和动态耦合度准则来定义组件和连接件的复杂性因素，其中，动态复杂度准则在某个场景的执行中分析组件的动态行为来度量组件的复杂性，动态耦合度准则在某个场景的执行中分析连接件的消息传递协议来度量连接件的复杂性。利用失效模式和影响分析（FMEA）技术。</p>
+<h5 id="6-AHP（层次分析法）方法。"><a href="#6-AHP（层次分析法）方法。" class="headerlink" title="6. AHP（层次分析法）方法。"></a>6. AHP（层次分析法）方法。</h5><p>是对定性问题进行定量分析的一种简便、灵活而又实用的多准则决策方法。AHP 方法的特点是把复杂问题中的各种因素通过划分为相联系的有序层次使之条理化，并在一般情况下通过两两对比，根据一定客观现实的主观判断结构，把专家意见和分析者的客观判断结果直接、有效地结合起来，将一定层次上元素的某些重要性进行定量描述，之后利用数学方法计算反映每一层次元素的相对重要性次序的权值，并最后通过所有层次之间的总排序计算所有元素的相对权重及对权重进行排序。</p>
+<h5 id="7-COSMIC-UML方法。"><a href="#7-COSMIC-UML方法。" class="headerlink" title="7. COSMIC+UML方法。"></a>7. COSMIC+UML方法。</h5><p>基于度量模型来评估软件架构可维护性的方法。针对不同表达方式的软件架构，采用统一的软件度量 COSMIC 方法来进行度量和评估。该方法主要是为了辅助分析软件架构的演化方案是否可行，并在开源软件 DCMMS 的软件架构 UML 组件图上得以验证。</p>
+<h4 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h4><h5 id="题①"><a href="#题①" class="headerlink" title="题①"></a>题①</h5><p>某公司欲开发一个在线交易网站，在架构设计阶段，公司的架构师识别出3个核心质量属性场景。其中”网站正常运行时，用户发起的交易请求应该在3秒内完成“主要与（58）质量属性相关，通常 可采用（59）架构策略实现该属性；”在线交易主站宕机后，能够在3秒内自动切换至备用站点并恢 复正常运行“主要与（60）质量属 性相关，通常可采用（61）架构策略实现该属性；”系统应该具备一定的安全保护措施，从而能够抵挡恶意的入侵破坏行为，并对所有针对网站的攻击行为进行报警和记录“主要与（62）质量属性相关，通常可采用（63）架构策略实现该属性。</p>
+<p>（58）A.可用性	B.性能	C.易用性	D.可修改性</p>
+<p>（59）A.抽象接口	B.信息隐藏	C.主动冗余	D.资源调度</p>
+<p>（60）A.可测试性	B.易用性	C.可用性	D.互操作性</p>
+<p>（61）A.记录&#x2F;回放	B.操作串行化	C.心跳	D.增加计算资源</p>
+<p>（62）A.可用性	B.安全性	C.可测试性	D.可修改性</p>
+<p>（63）A.追踪审计	B.Ping&#x2F;Echo	C.选举	D.维护现有接口</p>
+<p>答案:（58）B、（59）D、（60）C、（61）C、（62）B、（63）A；</p>
+<h5 id="题②"><a href="#题②" class="headerlink" title="题②"></a>题②</h5><p>架构权衡分析方法（Architecture Tradeoff Analysis Method，ATAM）是一种系统架构评估方法，主要在系统开发之前，针对性能、（57）、安全性和可修改性等质量属性进行评价和折中。 ATAM可以分为4个主要的活动阶段，包括需求收集、（58）描述、属性模型构造和分析、架构决策与折中，整个评估过程强调以（59）作为架构评估的核心概念，某软件公司采用ATAM进行软件架构评估，在评估过程中识别出了多个关于质量属性的描述，其中，“系统在进行文件保存操作时应该与Windows系统的操作方式保持一致，主要与（60）质量属性相关:“系统应该提供一个开放的API接口，支持远程对系统的行为进行控制与调试，主要与（61）质量属性相关。在识别出上述描述后，通常采用（62）对质量属性的描述进行刻画与排序。在评估过程中，（63）是个会影响多个质量属性的架构设计决策。</p>
+<p>（57）A.可测试性	B.可移植性	C.可用性	D.易用性</p>
+<p>（58）A.架构视图	B.架构排序	C.架构风格	D.架构策略</p>
+<p>（59）A.用例	B.视图	C.属性	D.模型</p>
+<p>（60）A.可测试性	B.互操作性	C.可移植性	D.易用性</p>
+<p>（61）A.可测试性	B.互操作性	C.可移植性	D.易用性</p>
+<p>（62）A.期望管理矩阵	B.决策表	C.优先队列	D.效用树</p>
+<p>（63）A.风险点	B.决策点	C.权衡点	D.敏感点</p>
+<p>答案：（57）C、（58）A、（59）C、（60）D、（61）A、（62）D、（63）C；</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎大家进行交流讨论。还可通过邮箱联系：youngdream365##qq.com (##替换为@)。 </span>
+    </div>
+</article>
+
+
+<div class="article_copyright">
+    <p>
+		<span class="copy-title">文章标题:</span>13.5质量属性-架构评估&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">本文作者:</span><a  title="YoungDream">YoungDream</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">字数:</span><span class="post-count">4.8k</span>
+	</p>
+    <p>
+		<span class="copy-title">发布时间:</span>2024-09-02, 16:23:49&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">最后更新:</span>2024-10-30, 06:15:57
+	</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/" title="13.5质量属性-架构评估">https://youngdream365.github.io/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: 'Ov23liTt0yW7e6Mm66MW',
+            clientSecret: '52c4cd22b2658a2ac4c1c7e01b8126c3a2b84ae3',
+            repo: 'youngdream365.github.io',
+            owner: 'youngdream365',
+            admin: ['youngdream365'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2024 youngdream365
+</p>
+
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s">
+    <span class="min "></span>
+</button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞，疼爱就打赏~</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/donation/weixin.webp" class="weixin" title="扫码支持">
+            <img src="/img/donation/alipay.png" class="alipay" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" value="weixin" checked>微信</label></span>
+        <span><label><input type="radio" name="pay" value="alipay" >支付宝</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="alipay"){
+                $(".shang_box .shang_payimg .pay_img").addClass("alipay_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("alipay_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    #post {
+        background: url(/img/index.webp);
+    }
+    
+    
+    #post .index {
+        background: url(/img/index.webp);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        background: url("/img/article-list-background/sky-cloud.webp");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

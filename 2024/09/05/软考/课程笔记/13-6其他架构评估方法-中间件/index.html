@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>13.6其他架构评估方法-中间件 | YoungDream&#39;blog</title>
+  <meta name="keywords" content=" 软考 , 系统架构设计师 ">
+  <meta name="description" content="13.6其他架构评估方法-中间件 | YoungDream&#39;blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404 Not Found：该页无法显示">
+<meta property="og:url" content="https://youngdream365.github.io/404/index.html">
+<meta property="og:site_name" content="YoungDream&#39;blog">
+<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-16T08:37:03.000Z">
+<meta property="article:modified_time" content="2024-08-18T08:09:13.324Z">
+<meta property="article:author" content="YoungDream">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.ico">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/github.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.webp"/>
+</a>
+<div class="author">
+    <span>YoungDream</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/youngdream365"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/e70465b9a00f"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/qq_36299991"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:youngdream365@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=879767145&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(12)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软考">
+            <i class="fold iconfont icon-right"></i>
+            软考
+            <small>(11)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="软考&lt;---&gt;课程笔记">
+            
+            课程笔记
+            <small>(11)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="blog">
+            <i class="fold iconfont icon-right"></i>
+            blog
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="blog&lt;---&gt;hexo">
+            
+            hexo
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="12">
+<input type="hidden" id="yelog_site_word_count" value="24.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软考</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>系统架构设计师</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.6其他架构评估方法-中间件">13.6其他架构评估方法-中间件</span>
+            <span class="post-date" title="2024-09-05 22:25:06">2024/09/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.5质量属性-架构评估">13.5质量属性-架构评估</span>
+            <span class="post-date" title="2024-09-02 16:23:49">2024/09/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/30/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.4架构复用-DSSA-ABSD">13.4架构复用-DSSA-ABSD</span>
+            <span class="post-date" title="2024-08-30 23:03:28">2024/08/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/24/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-2%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.2软件架构风格">13.2软件架构风格</span>
+            <span class="post-date" title="2024-08-24 06:51:23">2024/08/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-3%E8%A1%A5%E5%85%85-%E5%B1%82%E6%AC%A1%E9%A3%8E%E6%A0%BC-SOA/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.3补充-层次风格-SOA">13.3补充-层次风格-SOA</span>
+            <span class="post-date" title="2024-08-22 20:19:58">2024/08/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-1%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0-%E6%9E%84%E4%BB%B6%E6%8A%80%E6%9C%AF/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.1软件架构概述-构件技术">13.1软件架构概述-构件技术</span>
+            <span class="post-date" title="2024-08-22 19:46:35">2024/08/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/21/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/5-1%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B-%E5%B1%80%E5%9F%9F%E7%BD%91-TCPIP%E5%8D%8F%E8%AE%AE%E6%97%8F/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="5.1七层模型-局域网-TCPIP协议族">5.1七层模型-局域网-TCPIP协议族</span>
+            <span class="post-date" title="2024-08-21 12:15:17">2024/08/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/10/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/2-1%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86-%E5%90%8C%E6%AD%A5%E4%BA%92%E6%96%A5/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="2.1操作系统概述-进程管理-同步互斥">2.1操作系统概述-进程管理-同步互斥</span>
+            <span class="post-date" title="2024-08-10 11:09:28">2024/08/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/10/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-3%E7%A3%81%E7%9B%98-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%8A%80%E6%9C%AF-%E6%80%BB%E7%BA%BF/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.3磁盘-输入输出技术-总线">1.3磁盘-输入输出技术-总线</span>
+            <span class="post-date" title="2024-08-10 08:59:45">2024/08/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6-CPU-%E6%A0%A1%E9%AA%8C%E7%A0%81/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.1计算机硬件-CPU-校验码">1.1计算机硬件-CPU-校验码</span>
+            <span class="post-date" title="2024-08-09 18:03:23">2024/08/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F-cache/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.2指令系统-存储系统-cache">1.2指令系统-存储系统-cache</span>
+            <span class="post-date" title="2024-08-09 12:21:47">2024/08/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 blog hexo "
+           href="/2023/11/21/hello-world/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2023-11-21 20:03:27">2023/11/21</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-软考/课程笔记/13-6其他架构评估方法-中间件" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">13.6其他架构评估方法-中间件</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="软考">软考</a>
+			 
+			>
+			 
+            
+            <a  data-rel="软考&lt;---&gt;课程笔记">课程笔记</a>
+			
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">软考</a>
+            
+            <a class="color3">系统架构设计师</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-10-30 06:16:25'>2024-09-05 22:25</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-text">13.6其他架构评估方法-中间件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-text">中间件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%9A%84%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%9C%89%E4%BA%94%E7%B1%BB"><span class="toc-text">主要的中间件有五类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BF%E9%97%AE%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-text">数据库访问中间件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%EF%BC%88RPC%EF%BC%89"><span class="toc-text">远程过程调用（RPC）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%EF%BC%88MOM%EF%BC%89"><span class="toc-text">面向消息中间件（MOM）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E5%AF%B9%E8%B1%A1%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-text">分布式对象中间件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E4%B8%AD%E9%97%B4%E4%BB%B6"><span class="toc-text">事务中间件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#J2EE%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF"><span class="toc-text">J2EE核心技术</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#J2EE%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">J2EE体系结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E5%B1%82%E7%BB%84%E4%BB%B6"><span class="toc-text">客户层组件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Web-%E5%B1%82%E7%BB%84%E4%BB%B6"><span class="toc-text">Web 层组件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%9A%E5%8A%A1%E5%B1%82%E7%BB%84%E4%BB%B6"><span class="toc-text">业务层组件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E5%B1%82"><span class="toc-text">信息系统层</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84"><span class="toc-text">典型应用架构</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#JSP-Servlet-JavaBean-DAO"><span class="toc-text">JSP+Servlet+JavaBean+DAO</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%87%8D%E9%87%8F%E7%BA%A7%E4%B8%8E%E8%BD%BB%E9%87%8F%E7%BA%A7%E4%B9%8B%E4%BA%89"><span class="toc-text">重量级与轻量级之争</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NET%E5%B9%B3%E5%8F%B0"><span class="toc-text">.NET平台</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#NET%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">.NET的体系结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CLR%E7%9A%84%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-text">CLR的体系结构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#NET%E5%85%AC%E5%85%B1%E8%AF%AD%E8%A8%80%E8%BF%90%E8%A1%8C%E5%BA%93%E4%B8%8E%E7%B1%BB%E5%BA%93%E3%80%81%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%8F%8A%E6%95%B4%E4%B8%AA%E7%B3%BB%E7%BB%9F%E4%B9%8B%E9%97%B4%E5%85%B3%E7%B3%BB%E7%A4%BA%E6%84%8F%E5%9B%BE"><span class="toc-text">.NET公共语言运行库与类库、应用程序及整个系统之间关系示意图</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NET%E5%92%8CJ2EE%E4%B9%8B%E4%BA%89"><span class="toc-text">.NET和J2EE之争</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-6 i,
+    .toc-level-6 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="13-6其他架构评估方法-中间件"><a href="#13-6其他架构评估方法-中间件" class="headerlink" title="13.6其他架构评估方法-中间件"></a>13.6其他架构评估方法-中间件</h3><h4 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h4><p>在一个<strong>分布式系统环境中处于操作系统和应用程序之间的软件</strong>，可以在<strong>不同的技术之间共享资源</strong>，将不同的操作系统、数据库、异构的网络环境以及若干应用<strong>结合成一个有机的协同工作整体</strong>。<br>中间件位于<strong>客户机&#x2F;服务器的操作系统之上，管理计算机资源和网络通信</strong>，有如下特点：</p>
+<ol>
+<li><p>中间件是<strong>一类软件</strong>，而非一种软件。</p>
+</li>
+<li><p>中间件不仅仅<strong>实现互连</strong>，还要实现<strong>应用之间的互操作</strong>。</p>
+</li>
+<li><p>中间件是<strong>基于分布式处理的软件</strong>，最<strong>突出的特点是其网络通信功能</strong>。</p>
+</li>
+</ol>
+<p>中间件的任务是<strong>使应用程序开发变得更容易</strong>，通过提供统一的程序抽象，<strong>隐藏异构系统和分布式系统下低级别编程的复杂度</strong>。</p>
+<h4 id="主要的中间件有五类"><a href="#主要的中间件有五类" class="headerlink" title="主要的中间件有五类"></a>主要的中间件有五类</h4><h5 id="数据库访问中间件"><a href="#数据库访问中间件" class="headerlink" title="数据库访问中间件"></a>数据库访问中间件</h5><p>通过一个<strong>抽象层访问数据库</strong>，从而允许使用相同或相似的代码访问不同的数据库资源。典型的技术如 Windows 平台的 ODBC 和 Java 平台的 JDBC 等。</p>
+<h5 id="远程过程调用（RPC）"><a href="#远程过程调用（RPC）" class="headerlink" title="远程过程调用（RPC）"></a>远程过程调用（RPC）</h5><p>是一种广泛使用的<strong>分布式应用程序处理方法</strong>。一个应用程序<strong>使用 RPC 来“远程”执行一个位于不同地址空间内的过程</strong>，从效果上看和执行本地调用相同。</p>
+<h5 id="面向消息中间件（MOM）"><a href="#面向消息中间件（MOM）" class="headerlink" title="面向消息中间件（MOM）"></a>面向消息中间件（MOM）</h5><p>利用高效可靠的消息传递机制进行平台无关的数据交流，并可基于数据通信进行分布系统的集成。通过提供消息传递和消息排队模型，可在<strong>分布环境下扩展进程间的通信</strong>，并支持多种通信协议、语言、应用程序、硬件和软件平台。典型的产品如 IBM 的 MaSeries。</p>
+<h5 id="分布式对象中间件"><a href="#分布式对象中间件" class="headerlink" title="分布式对象中间件"></a>分布式对象中间件</h5><p>随着<strong>对象技术与分布式计算技术</strong>的发展，两者相互结合形成了分布式对象技术，并发展成为当今软件技术的主流方向。典型的产品如 Sun 的 RMI&#x2F;EJB、Microsoft 的 DCOM 等。OMG 的 CORBA。</p>
+<h5 id="事务中间件"><a href="#事务中间件" class="headerlink" title="事务中间件"></a>事务中间件</h5><p>也称<strong>事务处理监控器（TPM）</strong>最早出现在大型机上。事务处理监控程序位于客户和服务器之间，完成事务管理与协调、负载平衡、失效恢复等任务，提高系统的整体性能。</p>
+<h4 id="J2EE核心技术"><a href="#J2EE核心技术" class="headerlink" title="J2EE核心技术"></a>J2EE核心技术</h4><h5 id="J2EE体系结构"><a href="#J2EE体系结构" class="headerlink" title="J2EE体系结构"></a>J2EE体系结构</h5><p><img src="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/J2EE2.png" alt="J2EE2"></p>
+<p><img src="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/J2EE1.jpg" alt="J2EE1"></p>
+<p>J2EE 平台采用了<strong>多层分布式应用程序模型</strong>，实现不同逻辑功能的应用程序被封装到不同的构件中，处于不同层次的构件被分别部署到不同的机器中。四层结构:</p>
+<p><img src="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/J2EE.png" alt="J2EE"></p>
+<h5 id="客户层组件"><a href="#客户层组件" class="headerlink" title="客户层组件"></a>客户层组件</h5><p>J2EE应用程序可以是基于web方式的也可以是基于传统方式的静态的HTML(标准通用标记语言下的一个应用)页面和Applets是客户层组件</p>
+<h5 id="Web-层组件"><a href="#Web-层组件" class="headerlink" title="Web 层组件"></a>Web 层组件</h5><p>J2EEweb层组件可以是JSP 页面或Servlet.</p>
+<h5 id="业务层组件"><a href="#业务层组件" class="headerlink" title="业务层组件"></a>业务层组件</h5><p>业务层代码的逻辑用来满足特定领域的业务逻辑处理。</p>
+<h5 id="信息系统层"><a href="#信息系统层" class="headerlink" title="信息系统层"></a>信息系统层</h5><p>企业信息系统层处理企业信息系统软件包括企业基础建设系统例如企业资源计划(ERP)，大型机事务处理，数据库系统，和其它的遗留信息系统。例如，J2EE应用组件可能为了数据库连接需要访问企业信息系统。</p>
+<h4 id="典型应用架构"><a href="#典型应用架构" class="headerlink" title="典型应用架构"></a>典型应用架构</h4><h5 id="JSP-Servlet-JavaBean-DAO"><a href="#JSP-Servlet-JavaBean-DAO" class="headerlink" title="JSP+Servlet+JavaBean+DAO"></a>JSP+Servlet+JavaBean+DAO</h5><ul>
+<li><p>JSP：用于显示、收集数据的部分。作为MVC中的视图V。</p>
+</li>
+<li><p>Servet：作为业务逻辑层，用于处理复杂的业务逻辑，如验证数据、实例化IavaBean、调用DAO连接数据库等。作为MVC中的控制器c。在其中会调用Service方法处理服务。</p>
+</li>
+<li><p>JavaBean：用于数据的封装，方便将查询结果在servlet与jsp页面之间进行传递等。</p>
+</li>
+<li><p>DAO：用于连接数据库及进行数据库的操作如:查询、删除、更改等。DA0与JavaBean合在一起为MVC中的模型M。</p>
+</li>
+<li><p>基本流程：JSP发一个数据到servlet，servlet收到后做下解析再根据数据调用相应的service去服务，service如果有要调用数据库就通过DA0跟数据库交互，使用iavaBean完成封装，返回结果给servlet，servlet再返回给JSP。</p>
+</li>
+</ul>
+<h5 id="重量级与轻量级之争"><a href="#重量级与轻量级之争" class="headerlink" title="重量级与轻量级之争"></a>重量级与轻量级之争</h5><ul>
+<li>重量级框架占用资源过多，在开发的过程中效率很低;大部分时间花在配置、运行的过程上修改复杂;单元测试也比较麻烦。但在大量运行过程中会表现出优异的效果，也即<strong>开发麻烦，运行性能高</strong>。</li>
+<li>轻量级框架提高了开发的速度;立即可以看到结果;做单元测试非常简单;大量线程可供参考的开源代码。<strong>开发简单，但运行性能低</strong>。</li>
+</ul>
+<h4 id="NET平台"><a href="#NET平台" class="headerlink" title=".NET平台"></a>.NET平台</h4><p>.NET框架处于操作系统和.NET应用语言之间，<strong>只适用于微软系统</strong>，而 J2EE 支持跨平台，任何安装了 JVM 的平台。</p>
+<h5 id="NET的体系结构"><a href="#NET的体系结构" class="headerlink" title=".NET的体系结构"></a>.NET的体系结构</h5><p><img src="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/NET.jpg" alt="NET"></p>
+<h5 id="CLR的体系结构"><a href="#CLR的体系结构" class="headerlink" title="CLR的体系结构"></a>CLR的体系结构</h5><p><img src="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/CLR.jpg" alt="CLR"></p>
+<h5 id="NET公共语言运行库与类库、应用程序及整个系统之间关系示意图"><a href="#NET公共语言运行库与类库、应用程序及整个系统之间关系示意图" class="headerlink" title=".NET公共语言运行库与类库、应用程序及整个系统之间关系示意图"></a>.NET公共语言运行库与类库、应用程序及整个系统之间关系示意图</h5><p><img src="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/AA.jpg"></p>
+<h4 id="NET和J2EE之争"><a href="#NET和J2EE之争" class="headerlink" title=".NET和J2EE之争"></a>.NET和J2EE之争</h4><ol>
+<li>JVM（将所有 JAVA 代码都编译为字节码，由 JVM 解释执行）和 CLR（.NET 核心技术，类似于IM生成中间代码 CLR，编译执行）</li>
+<li><strong>对多层分布式应用的支持</strong>：二者都支持多层分布式应用程序的开发：在表示层的平台支持上J2EE 客户端支持多个平台，.NET 只能在微软系统上运行，也正是因此，NET 会对微软系统上的应用进行优化；在业务层，J2EE 占优势，因为有许多开源的项目和代码供参考，开发就变得单：在数据层，二者都支持多种数据库，都非常优秀。</li>
+<li><strong>安全性</strong>：由于 JAVA 在 .NET 之后出来，借鉴了 .NET 优点，JAVA 在运行时动态验证，.NET 是静态全面验证，二者都非常优秀，不分上下。</li>
+<li><strong>应用程序的部署</strong>：J2EE 的部署相对来说较复杂，针对不同的系统要特别布置。</li>
+<li><strong>可移植性</strong>：显然 J2EE 占优势，一次开发，到处运行。</li>
+<li><strong>外部支持</strong>：J2EE 占优势，得到了很多厂家的支持，.NET只是微软一家。</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎大家进行交流讨论。还可通过邮箱联系：youngdream365##qq.com (##替换为@)。 </span>
+    </div>
+</article>
+
+
+<div class="article_copyright">
+    <p>
+		<span class="copy-title">文章标题:</span>13.6其他架构评估方法-中间件&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">本文作者:</span><a  title="YoungDream">YoungDream</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">字数:</span><span class="post-count">1.6k</span>
+	</p>
+    <p>
+		<span class="copy-title">发布时间:</span>2024-09-05, 22:25:06&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">最后更新:</span>2024-10-30, 06:16:25
+	</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/" title="13.6其他架构评估方法-中间件">https://youngdream365.github.io/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: 'Ov23liTt0yW7e6Mm66MW',
+            clientSecret: '52c4cd22b2658a2ac4c1c7e01b8126c3a2b84ae3',
+            repo: 'youngdream365.github.io',
+            owner: 'youngdream365',
+            admin: ['youngdream365'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2024 youngdream365
+</p>
+
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s">
+    <span class="min "></span>
+</button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞，疼爱就打赏~</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/donation/weixin.webp" class="weixin" title="扫码支持">
+            <img src="/img/donation/alipay.png" class="alipay" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" value="weixin" checked>微信</label></span>
+        <span><label><input type="radio" name="pay" value="alipay" >支付宝</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="alipay"){
+                $(".shang_box .shang_payimg .pay_img").addClass("alipay_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("alipay_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    #post {
+        background: url(/img/index.webp);
+    }
+    
+    
+    #post .index {
+        background: url(/img/index.webp);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        background: url("/img/article-list-background/sky-cloud.webp");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

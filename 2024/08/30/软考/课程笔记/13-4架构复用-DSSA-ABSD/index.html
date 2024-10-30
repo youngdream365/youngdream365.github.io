@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>13.4架构复用-DSSA-ABSD | YoungDream&#39;blog</title>
+  <meta name="keywords" content=" 软考 , 系统架构设计师 ">
+  <meta name="description" content="13.4架构复用-DSSA-ABSD | YoungDream&#39;blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:type" content="website">
+<meta property="og:title" content="404 Not Found：该页无法显示">
+<meta property="og:url" content="https://youngdream365.github.io/404/index.html">
+<meta property="og:site_name" content="YoungDream&#39;blog">
+<meta property="og:description" content="很抱歉，您所访问的地址并不存在">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-08-16T08:37:03.000Z">
+<meta property="article:modified_time" content="2024-08-18T08:09:13.324Z">
+<meta property="article:author" content="YoungDream">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/favicon.ico">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/github.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.webp"/>
+</a>
+<div class="author">
+    <span>YoungDream</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+            <a title="github"
+               href="https://github.com/youngdream365"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            <a title="jianshu"
+               href="https://www.jianshu.com/u/e70465b9a00f"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-jianshu"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+            <a title="csdn"
+               href="https://blog.csdn.net/qq_36299991"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-csdn"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+        
+            <a title="email"
+               href="mailto:youngdream365@qq.com"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-email"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=879767145&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="全部文章">全部文章
+            
+                <small>(12)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="软考">
+            <i class="fold iconfont icon-right"></i>
+            软考
+            <small>(11)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="软考&lt;---&gt;课程笔记">
+            
+            课程笔记
+            <small>(11)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="blog">
+            <i class="fold iconfont icon-right"></i>
+            blog
+            <small>(1)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="blog&lt;---&gt;hexo">
+            
+            hexo
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">关于</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">友链</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="12">
+<input type="hidden" id="yelog_site_word_count" value="24.9k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">全部文章</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>软考</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>系统架构设计师</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>hexo</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/09/05/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-6%E5%85%B6%E4%BB%96%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95-%E4%B8%AD%E9%97%B4%E4%BB%B6/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.6其他架构评估方法-中间件">13.6其他架构评估方法-中间件</span>
+            <span class="post-date" title="2024-09-05 22:25:06">2024/09/05</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/09/02/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-5%E8%B4%A8%E9%87%8F%E5%B1%9E%E6%80%A7-%E6%9E%B6%E6%9E%84%E8%AF%84%E4%BC%B0/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.5质量属性-架构评估">13.5质量属性-架构评估</span>
+            <span class="post-date" title="2024-09-02 16:23:49">2024/09/02</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/30/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.4架构复用-DSSA-ABSD">13.4架构复用-DSSA-ABSD</span>
+            <span class="post-date" title="2024-08-30 23:03:28">2024/08/30</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/24/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-2%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E9%A3%8E%E6%A0%BC/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.2软件架构风格">13.2软件架构风格</span>
+            <span class="post-date" title="2024-08-24 06:51:23">2024/08/24</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-3%E8%A1%A5%E5%85%85-%E5%B1%82%E6%AC%A1%E9%A3%8E%E6%A0%BC-SOA/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.3补充-层次风格-SOA">13.3补充-层次风格-SOA</span>
+            <span class="post-date" title="2024-08-22 20:19:58">2024/08/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/22/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-1%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0-%E6%9E%84%E4%BB%B6%E6%8A%80%E6%9C%AF/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="13.1软件架构概述-构件技术">13.1软件架构概述-构件技术</span>
+            <span class="post-date" title="2024-08-22 19:46:35">2024/08/22</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/21/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/5-1%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B-%E5%B1%80%E5%9F%9F%E7%BD%91-TCPIP%E5%8D%8F%E8%AE%AE%E6%97%8F/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="5.1七层模型-局域网-TCPIP协议族">5.1七层模型-局域网-TCPIP协议族</span>
+            <span class="post-date" title="2024-08-21 12:15:17">2024/08/21</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/10/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/2-1%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0-%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86-%E5%90%8C%E6%AD%A5%E4%BA%92%E6%96%A5/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="2.1操作系统概述-进程管理-同步互斥">2.1操作系统概述-进程管理-同步互斥</span>
+            <span class="post-date" title="2024-08-10 11:09:28">2024/08/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/10/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-3%E7%A3%81%E7%9B%98-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%8A%80%E6%9C%AF-%E6%80%BB%E7%BA%BF/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.3磁盘-输入输出技术-总线">1.3磁盘-输入输出技术-总线</span>
+            <span class="post-date" title="2024-08-10 08:59:45">2024/08/10</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-1%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6-CPU-%E6%A0%A1%E9%AA%8C%E7%A0%81/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.1计算机硬件-CPU-校验码">1.1计算机硬件-CPU-校验码</span>
+            <span class="post-date" title="2024-08-09 18:03:23">2024/08/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 软考 课程笔记 "
+           href="/2024/08/09/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/1-2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F-cache/"
+           data-tag="软考,系统架构设计师"
+           data-author="" >
+            <span class="post-title" title="1.2指令系统-存储系统-cache">1.2指令系统-存储系统-cache</span>
+            <span class="post-date" title="2024-08-09 12:21:47">2024/08/09</span>
+        </a>
+        
+        
+        <a  class="全部文章 blog hexo "
+           href="/2023/11/21/hello-world/"
+           data-tag="hexo"
+           data-author="" >
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2023-11-21 20:03:27">2023/11/21</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-软考/课程笔记/13-4架构复用-DSSA-ABSD" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">13.4架构复用-DSSA-ABSD</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="软考">软考</a>
+			 
+			>
+			 
+            
+            <a  data-rel="软考&lt;---&gt;课程笔记">课程笔记</a>
+			
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color3">软考</a>
+            
+            <a class="color3">系统架构设计师</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            发布时间 : <time class="date" title='最后更新: 2024-10-30 06:15:25'>2024-08-30 23:03</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.6k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD"><span class="toc-text">13.4架构复用-DSSA-ABSD</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8"><span class="toc-text">软件架构复用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%AE%9A%E9%A2%86%E5%9F%9F%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84%EF%BC%88DSSA%EF%BC%89"><span class="toc-text">特定领域软件架构（DSSA）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DSSA%E7%9A%84%E4%B8%89%E4%B8%AA%E5%9F%BA%E6%9C%AC%E6%B4%BB%E5%8A%A8"><span class="toc-text">DSSA的三个基本活动</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%86%E5%9F%9F%E5%88%86%E6%9E%90"><span class="toc-text">领域分析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%86%E5%9F%9F%E8%AE%BE%E8%AE%A1"><span class="toc-text">领域设计</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%86%E5%9F%9F%E5%AE%9E%E7%8E%B0"><span class="toc-text">领域实现</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E4%B8%8EDSSA%E7%9A%84%E5%9B%9B%E7%A7%8D%E8%A7%92%E8%89%B2%E4%BA%BA%E5%91%98"><span class="toc-text">参与DSSA的四种角色人员</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%86%E5%9F%9F%E4%B8%93%E5%AE%B6"><span class="toc-text">领域专家</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%86%E5%9F%9F%E5%88%86%E6%9E%90%E4%BA%BA%E5%91%98"><span class="toc-text">领域分析人员</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%86%E5%9F%9F%E8%AE%BE%E8%AE%A1%E4%BA%BA%E5%91%98"><span class="toc-text">领域设计人员</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%86%E5%9F%9F%E5%AE%9E%E7%8E%B0%E4%BA%BA%E5%91%98"><span class="toc-text">领域实现人员</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8BDSSA%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-text">建立DSSA的过程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E9%A2%86%E5%9F%9F%E8%8C%83%E5%9B%B4"><span class="toc-text">定义领域范围</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E9%A2%86%E5%9F%9F%E7%89%B9%E5%AE%9A%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-text">定义领域特定的元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E9%A2%86%E5%9F%9F%E7%89%B9%E5%AE%9A%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E5%AE%9E%E7%8E%B0%E9%9C%80%E6%B1%82%E7%9A%84%E7%BA%A6%E6%9D%9F"><span class="toc-text">定义领域特定的设计和实现需求的约束</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E9%A2%86%E5%9F%9F%E6%A8%A1%E5%9E%8B%E5%92%8C%E6%9E%B6%E6%9E%84"><span class="toc-text">定义领域模型和架构</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%A7%E7%94%9F%E3%80%81%E6%90%9C%E9%9B%86%E5%8F%AF%E5%A4%8D%E7%94%A8%E7%9A%84%E4%BA%A7%E5%93%81%E5%8D%95%E5%85%83"><span class="toc-text">产生、搜集可复用的产品单元</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%B1%82%E6%AC%A1%E6%A8%A1%E5%9E%8B"><span class="toc-text">三层次模型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%86%E5%9F%9F%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">领域开发环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%86%E5%9F%9F%E7%89%B9%E5%AE%9A%E7%9A%84%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">领域特定的应用开发环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E6%89%A7%E8%A1%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">应用执行环境</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%98%E2%91%A0"><span class="toc-text">题①</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%98%E2%91%A1"><span class="toc-text">题②</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91-%EF%BC%88ABSD%EF%BC%89"><span class="toc-text">基于架构的软件开发*（ABSD）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B"><span class="toc-text">基于架构的软件开发过程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%9E%B6%E6%9E%84%E7%9A%84%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%8F%AF%E5%88%86%E4%B8%BA%E4%B8%8B%E5%88%976%E6%AD%A5"><span class="toc-text">基于架构的软件开发过程可分为下列6步:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%9E%B6%E6%9E%84%E9%9C%80%E6%B1%82%EF%BC%9A"><span class="toc-text">1. 架构需求：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%EF%BC%9A"><span class="toc-text">2. 架构设计：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E6%9E%B6%E6%9E%84%EF%BC%88%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%EF%BC%89%E6%96%87%E6%A1%A3%E5%8C%96%EF%BC%9A"><span class="toc-text">3. 架构（体系结构）文档化：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E6%9E%B6%E6%9E%84%E5%A4%8D%E5%AE%A1%EF%BC%9A"><span class="toc-text">4. 架构复审：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E6%9E%B6%E6%9E%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">5. 架构实现:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E6%9E%B6%E6%9E%84%E6%BC%94%E5%8C%96"><span class="toc-text">6. 架构演化:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-1"><span class="toc-text">例题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%98%E2%91%A0-1"><span class="toc-text">题①</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A2%98%E2%91%A1-1"><span class="toc-text">题②</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-6 i,
+    .toc-level-6 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="13-4架构复用-DSSA-ABSD"><a href="#13-4架构复用-DSSA-ABSD" class="headerlink" title="13.4架构复用-DSSA-ABSD"></a>13.4架构复用-DSSA-ABSD</h3><h4 id="软件架构复用"><a href="#软件架构复用" class="headerlink" title="软件架构复用"></a>软件架构复用</h4><ul>
+<li>软件产品线是指<strong>一组软件密集型系统</strong>，它们<strong>共享一个公共的、可管理的特性集</strong>，满足某个特定市场-或任务的具体需要，是以规定的方式用公共的<strong>核心资产集成</strong>开发出来的。即围绕核心资产库进行管理复用、集成新的系统。</li>
+<li>软件架构复用的类型包括<strong>机会复用</strong>和<strong>系统复用</strong>。机会复用是指开发过程中，<strong>只要发现有</strong>可复用的资产，就对其进行复用。系统复用是指<strong>在开发之前，就要进行规划</strong>，以决定哪些需要复用。</li>
+<li>可复用的资产包括:需求、架构设计、元素、建模与分析、测试、项目规划、过程方法和工具、人员、样本系统、缺陷消除。</li>
+<li>复用的基本过程主要包括3个阶段：<strong>首先构造&#x2F;获取可复用的软件资产，其次管理这些资产(构件库)，最后针对特定的需求，从这些资产中选择可复用的部分，以开发满足需求的应用系统</strong>。</li>
+</ul>
+<h4 id="特定领域软件架构（DSSA）"><a href="#特定领域软件架构（DSSA）" class="headerlink" title="特定领域软件架构（DSSA）"></a>特定领域软件架构（DSSA）</h4><p><strong>DSSA：</strong>Domain Specific Software Architecture</p>
+<ul>
+<li>DSSA 就是<strong>专用于一类特定类型的任务（领域）的</strong>、在整个领域中能有效地使用的、为成功构造应用系统限定了标准的组合结构的<strong>软件构件的集合</strong>。</li>
+<li>DSSA 就是一个<strong>特定的问题领域</strong>中支持一组应用的<code>领域模型</code>、<code>参考需求</code>、<code>参考架构</code>等组成的开发基础，其目标就是<strong>支持在一个特定领域中多个应用的生成</strong>。</li>
+<li>垂直域：在<strong>一个特定领域中的通用的软件架构，是一个完整的架构</strong>。（如：在线教育&#x2F;电子商务）</li>
+<li>水平域：在<strong>多个不同的特定领域之间的相同的部分的小工具</strong>（如购物和教育都有收费系统，收费系统即是水平域）</li>
+</ul>
+<h4 id="DSSA的三个基本活动"><a href="#DSSA的三个基本活动" class="headerlink" title="DSSA的三个基本活动"></a>DSSA的三个基本活动</h4><h5 id="领域分析"><a href="#领域分析" class="headerlink" title="领域分析"></a>领域分析</h5><p>这个阶段的主要目标是<strong>获得领域模型（领域需求）</strong>。<strong>识别信息源</strong>（识别需求），即整个领域工程过程中信息的来源，可能的信息源包括现存系统、技术文献问题域和系统开发的专家、用户调查和市场分析、领域演化的历史记录等，<strong>在此基础上就可以分析领域中系统的需求</strong>，确定<strong>哪些需求是领域中的系统广泛共享的，从而建立领域模型</strong>。</p>
+<h5 id="领域设计"><a href="#领域设计" class="headerlink" title="领域设计"></a>领域设计</h5><p>这个阶段的<strong>目标是获得 DSSA</strong>。DSSA 描述<strong>在领域模型中表示的需求的解决方案</strong>，它不是单个系统的表示，而是能够<strong>适应领域中多个系统的需求的一个高层次的设计</strong>。建立了领域模型之后，就可以派生出满足这些被建模的领域需求 DSSA。</p>
+<h5 id="领域实现"><a href="#领域实现" class="headerlink" title="领域实现"></a>领域实现</h5><p>这个阶段的主要目标是依据领域模型和 DSSA <strong>开发和组织可重用信息</strong>。这些可重用信息可能是从现有系统中提取得到，也可能需要通过新的开发得到。</p>
+<h4 id="参与DSSA的四种角色人员"><a href="#参与DSSA的四种角色人员" class="headerlink" title="参与DSSA的四种角色人员"></a>参与DSSA的四种角色人员</h4><h5 id="领域专家"><a href="#领域专家" class="headerlink" title="领域专家"></a>领域专家</h5><p>包括该领域中系统的<strong>有经验的用户、从事该领域中系统的需求分析设计、实现以及项目管理的有经验的软件工程师</strong>等。提供关于领域中系统的需求规约和实现的知识，帮助组织规范的、一致的领域字典，帮助选择样本系统作为领域工程的依据，复审领域模型、DSSA等领域工程产品，等。</p>
+<h5 id="领域分析人员"><a href="#领域分析人员" class="headerlink" title="领域分析人员"></a>领域分析人员</h5><p>由<strong>具有知识工程背景的有经验的系统分析员来担任</strong>。控制整个领域分析过程，进行知识获取，将获取的知识组织到领域模型中。</p>
+<h5 id="领域设计人员"><a href="#领域设计人员" class="headerlink" title="领域设计人员"></a>领域设计人员</h5><p>由<strong>有经验的软件设计人员来担任</strong>。根据领域模型和现有系统开发出DSSA，并对DSSA的准确性和一致性进行验证。</p>
+<h5 id="领域实现人员"><a href="#领域实现人员" class="headerlink" title="领域实现人员"></a>领域实现人员</h5><p>由<strong>有经验的程序设计人员来担任</strong>。根据领域模型和DSSA，开发构件。</p>
+<h4 id="建立DSSA的过程"><a href="#建立DSSA的过程" class="headerlink" title="建立DSSA的过程"></a>建立DSSA的过程</h4><h5 id="定义领域范围"><a href="#定义领域范围" class="headerlink" title="定义领域范围"></a>定义领域范围</h5><p>领域中的应用要满足用户一系列的需求。</p>
+<h5 id="定义领域特定的元素"><a href="#定义领域特定的元素" class="headerlink" title="定义领域特定的元素"></a>定义领域特定的元素</h5><p>建立领域的字典，归纳领域中的术语，识别出领域中相同和不相同的元素。</p>
+<h5 id="定义领域特定的设计和实现需求的约束"><a href="#定义领域特定的设计和实现需求的约束" class="headerlink" title="定义领域特定的设计和实现需求的约束"></a>定义领域特定的设计和实现需求的约束</h5><p>识别领域中的所有约束，这些约束对领域的设计和实现会造成什么后果。</p>
+<h5 id="定义领域模型和架构"><a href="#定义领域模型和架构" class="headerlink" title="定义领域模型和架构"></a>定义领域模型和架构</h5><p>产生一般的架构，并描述其构件说明。</p>
+<h5 id="产生、搜集可复用的产品单元"><a href="#产生、搜集可复用的产品单元" class="headerlink" title="产生、搜集可复用的产品单元"></a>产生、搜集可复用的产品单元</h5><p>为DSSA增加复用构件，使可用于新的系统。以上过程是并发的、递归的、反复的、螺旋型的。</p>
+<h4 id="三层次模型"><a href="#三层次模型" class="headerlink" title="三层次模型"></a>三层次模型</h4><p><img src="/2024/08/30/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD/DSSA.png" alt="DSSA"></p>
+<h5 id="领域开发环境"><a href="#领域开发环境" class="headerlink" title="领域开发环境"></a>领域开发环境</h5><p>领域架构师决定核心架构，产出参考结构、参考需求、架构领域模型、开发工具。</p>
+<h5 id="领域特定的应用开发环境"><a href="#领域特定的应用开发环境" class="headerlink" title="领域特定的应用开发环境"></a>领域特定的应用开发环境</h5><p>应用工程师根据具体环境来将核心架构实例化。</p>
+<h5 id="应用执行环境"><a href="#应用执行环境" class="headerlink" title="应用执行环境"></a>应用执行环境</h5><p>操作员实现实例化后的架构。</p>
+<h4 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h4><h5 id="题①"><a href="#题①" class="headerlink" title="题①"></a>题①</h5><p>DSSA是在一个特定应用领域中为一组应用提供组织结构参考的软件体系结构，参与DSSA的人员可以划分为4种角色，包括领域专家、领域设计人员、领域实现人员和（1），其基本活动包括领域分析、领域设计和（2）。</p>
+<p>（1）A.领域测试人员	B.领域顾问	A.领域分析师	D.领域经理<br>（2）A.领域建模	B.架构设计	C.领域实现	D.领域评估</p>
+<p>答案:C、C；</p>
+<h5 id="题②"><a href="#题②" class="headerlink" title="题②"></a>题②</h5><p>特定领域软件架构（Domain Specific Software Architecture,DssA）以一个特定问题领域为对象，形成由领域参考模型，参考需求，（1）等组成的开发基础架构，支持一个特定领域中多个应用的生成。DSSA的基本活动包括领域分析、领域设计和领域实现。其中领域分析的主要目的是获得（2），从而描述领域中系统之间共同的需求，即领域需求；领域设计的主要目标是获得（3），从而描述领域模型中表示需求的解决方案；领域实现的主要目标是开发和组织可重用信息，并实现基础软件架构。</p>
+<p>（1）A.参考设计	B.参考规约	C.参考架构	D.参考实现</p>
+<p>（2）A.领域边界	B.领域信息	C.领域对象	D.领域模型</p>
+<p>（3）A.特定领域软件需求	B.特定领域软件架构	C.特定领域软件设计模型	D.特定领域软件重用模型<br>答案：C、D、B；</p>
+<h4 id="基于架构的软件开发-（ABSD）"><a href="#基于架构的软件开发-（ABSD）" class="headerlink" title="基于架构的软件开发*（ABSD）"></a>基于架构的软件开发*（ABSD）</h4><ul>
+<li>ABSD方法是<strong>架构驱动</strong>，强调由<strong>业务、质量和功能需求的组合驱动架构设计</strong>。它强调采用<strong>视角和视图来描述软件架构</strong>，采用<strong>用例和质量属性场景来描述需求</strong>。进一步来说，用例描述的是<strong>功能需求</strong>，质量属性场景描述的是<strong>质量需求</strong>（或侧重于非功能需求）。<ul>
+<li><strong>业务</strong>、<strong>质量</strong>和<strong>功能需求</strong>的组合驱动架构设计。</li>
+<li><strong>视角</strong>和<strong>视图</strong>来描述软件架构。</li>
+<li><strong>用例</strong>和<strong>质量属性场景</strong>来描述需求。</li>
+</ul>
+</li>
+<li>使用ABSD方法，<strong>设计活动可以从项目总体功能框架明确就开始</strong>，这意味着需求获取和分析还没有完成，就开始了软件设计。</li>
+<li>ABSD方法有三个基础：<ul>
+<li>功能的分解，使用已有的基于模块的内聚和耦合技术；</li>
+<li>通过选择架构风格来实现质量和业务需求；</li>
+<li>软件模板的使用，软件模板利用了一些软件系统的结构；</li>
+</ul>
+</li>
+<li>ABSD方法是<strong>递归的</strong>，且迭代的每一个步骤都是清晰定义的。因此，不管设计是否完成，架构总是清晰的，有助于降低架构设计的随意性。</li>
+</ul>
+<h4 id="基于架构的软件开发过程"><a href="#基于架构的软件开发过程" class="headerlink" title="基于架构的软件开发过程"></a>基于架构的软件开发过程</h4><h5 id="基于架构的软件开发过程可分为下列6步"><a href="#基于架构的软件开发过程可分为下列6步" class="headerlink" title="基于架构的软件开发过程可分为下列6步:"></a>基于架构的软件开发过程可分为下列6步:</h5><p><img src="/2024/08/30/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD/ABSD.png" alt="ABSD"></p>
+<p><img src="/2024/08/30/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD/DSSA2.png" alt="DSSA2"></p>
+<h5 id="1-架构需求："><a href="#1-架构需求：" class="headerlink" title="1. 架构需求："></a>1. 架构需求：</h5><p>重在<strong>掌握标识构件的三步</strong>。</p>
+<h5 id="2-架构设计："><a href="#2-架构设计：" class="headerlink" title="2. 架构设计："></a>2. 架构设计：</h5><p>将需求阶段的标识构件映射成构件，进行分析。</p>
+<h5 id="3-架构（体系结构）文档化："><a href="#3-架构（体系结构）文档化：" class="headerlink" title="3. 架构（体系结构）文档化："></a>3. 架构（体系结构）文档化：</h5><p>主要产出两种文档，即**<code>架构（体系结构）规格说明</code>，<code>测试架构（体系结构）需求的质量设计说明书</code>**。文档是至关重要的，是所有人员通信的手段，关系开发的成败。</p>
+<p><img src="/2024/08/30/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD/DSSA3.png" alt="DSSA3"></p>
+<h5 id="4-架构复审："><a href="#4-架构复审：" class="headerlink" title="4. 架构复审："></a>4. 架构复审：</h5><p>由外部人员（独立于开发组织之外的人，如用户代表和领域专家等）参加的复审，复审架构是否满足需求，质量问题，构件划分合理性等。若复审不过，则返回架构设计阶段进行重新设计、文档化，再复审。</p>
+<h5 id="5-架构实现"><a href="#5-架构实现" class="headerlink" title="5. 架构实现:"></a>5. 架构实现:</h5><p>用实体来显示出架构。实现构件，构件组装成系统。</p>
+<h5 id="6-架构演化"><a href="#6-架构演化" class="headerlink" title="6. 架构演化:"></a>6. 架构演化:</h5><p>对架构进行改变，按需求增删构件，使架构可复用。</p>
+<h4 id="例题-1"><a href="#例题-1" class="headerlink" title="例题"></a>例题</h4><h5 id="题①-1"><a href="#题①-1" class="headerlink" title="题①"></a>题①</h5><p>在基于体系结构的软件设计方法中，采用（1）来描述软件架构，采用（2）来描述功能需求，采用（3）来描述质量需求。</p>
+<p>（1）A.类图和序列图	B.视角与视图	C.构件和类图	D.构件与功能<br>（2）A.类图	B.视角	C.用例	D.质量场景<br>（3）A.连接件	B.用例	C.质量场景	D.质量属性</p>
+<p>答案：B、C、C；</p>
+<h5 id="题②-1"><a href="#题②-1" class="headerlink" title="题②"></a>题②</h5><p>体系结构文档化有助于辅助系统分析人员和程序员去实现体系结构。体系结构文档化过程的主要输出包括（1）</p>
+<p>A.体系结构规格说明、测试体系结构需求的质量设计说明书</p>
+<p>B.质量属性说明书、体系结构描述</p>
+<p>C.体系结构规格说明、软件功能需求说明</p>
+<p>D.多视图体系结构模型、体系结构验证说明</p>
+<p>答案：A；</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎大家进行交流讨论。还可通过邮箱联系：youngdream365##qq.com (##替换为@)。 </span>
+    </div>
+</article>
+
+
+<div class="article_copyright">
+    <p>
+		<span class="copy-title">文章标题:</span>13.4架构复用-DSSA-ABSD&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">本文作者:</span><a  title="YoungDream">YoungDream</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">字数:</span><span class="post-count">2.6k</span>
+	</p>
+    <p>
+		<span class="copy-title">发布时间:</span>2024-08-30, 23:03:28&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="copy-title">最后更新:</span>2024-10-30, 06:15:25
+	</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/08/30/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD/" title="13.4架构复用-DSSA-ABSD">https://youngdream365.github.io/2024/08/30/%E8%BD%AF%E8%80%83/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/13-4%E6%9E%B6%E6%9E%84%E5%A4%8D%E7%94%A8-DSSA-ABSD/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">&#34;署名-非商用-相同方式共享 4.0&#34;</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: 'Ov23liTt0yW7e6Mm66MW',
+            clientSecret: '52c4cd22b2658a2ac4c1c7e01b8126c3a2b84ae3',
+            repo: 'youngdream365.github.io',
+            owner: 'youngdream365',
+            admin: ['youngdream365'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2016-2024 youngdream365
+</p>
+
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s">
+    <span class="min "></span>
+</button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞，疼爱就打赏~</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/donation/weixin.webp" class="weixin" title="扫码支持">
+            <img src="/img/donation/alipay.png" class="alipay" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" value="weixin" checked>微信</label></span>
+        <span><label><input type="radio" name="pay" value="alipay" >支付宝</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="alipay"){
+                $(".shang_box .shang_payimg .pay_img").addClass("alipay_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("alipay_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    #post {
+        background: url(/img/index.webp);
+    }
+    
+    
+    #post .index {
+        background: url(/img/index.webp);
+    }
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.2;
+        background: url("/img/article-list-background/sky-cloud.webp");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
